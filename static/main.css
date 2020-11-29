@@ -1,0 +1,28 @@
+body {
+    background: #23232f;
+    color: #ffffff;
+    font-family: 'Raleway', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6,.nav-link {
+    font-family: 'Cabin', sans-serif;
+}
+
+.nav-link, .navbar-brand {
+    color:#fff!important;
+}
+
+.nav-link:hover {
+    border-bottom: 3px solid #676eff;
+    /* text-decoration-color: #676eff;
+    text-decoration-thickness: 3px; */
+}
+
+.btn-outline-primary {
+    color: #fff;
+    background-color: #676eff;
+}
+
+.bg-primary {
+    background-color: #676eff!important;
+}
