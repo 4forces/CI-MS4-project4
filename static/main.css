@@ -4,16 +4,25 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 
+#home-page {
+    background: linear-gradient(to bottom, rgba(35,35,47, 0.85) 0%, rgba(35,35,47, 0.85) 100%), url("../static/images/vector12.jpg");
+    /* background-position: center; */
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+    /* height: 100vh; */
+}
+
 h1,h2,h3,h4,h5,h6,.nav-link {
     font-family: 'Cabin', sans-serif;
 }
 
-.nav-link, .navbar-brand {
-    color:#fff!important;
+.nav-link {
+    color:#ffffff!important;
+    font-size: larger;
 }
 
 .nav-link:hover {
-    border-bottom: 3px solid #676eff;
+    border-bottom: 3px solid #f3bf10;
     /* text-decoration-color: #676eff;
     text-decoration-thickness: 3px; */
 }
@@ -21,8 +30,38 @@ h1,h2,h3,h4,h5,h6,.nav-link {
 .btn-outline-primary {
     color: #fff;
     background-color: #676eff;
+    border-color: #676eff;
 }
+
+.btn-outline-primary:hover {
+    background-color: #f3bf10;
+    border-color: #f3bf10;
+}
+
 
 .bg-primary {
     background-color: #676eff!important;
 }
+
+.carousel-caption {
+    background: rgba(114, 116, 142, 0.8);
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: initial;
+}
+
+.bordered {
+    border: 3px solid #72748e;
+    border-radius: 1rem;
+}
+
+/* @media only screen and (min-width: 992px) {
+  .w-100 {
+    width: 100% !important;
+    height: 75vh;
+  }
+} */
+
+/* #logo {
+    height: 16rem;
+} */
