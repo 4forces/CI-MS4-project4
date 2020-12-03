@@ -27,22 +27,22 @@ h1,h2,h3,h4,h5,h6,.nav-link {
     text-decoration-thickness: 3px; */
 }
 
-.btn-outline-primary {
+.btn-outline-primary, .btn-primary {
     color: #fff;
     background-color: #676eff;
     border-color: #676eff;
 }
 
-.btn-outline-primary:hover {
+.btn-outline-primary:hover, .btn-primary:hover {
     background-color: #f3bf10;
     border-color: #f3bf10;
 }
-
 
 .bg-primary {
     background-color: #676eff!important;
 }
 
+/* carousel css */
 .carousel-caption {
     background: rgba(114, 116, 142, 0.8);
     top: 50%;
@@ -54,6 +54,30 @@ h1,h2,h3,h4,h5,h6,.nav-link {
     border: 3px solid #72748e;
     border-radius: 1rem;
 }
+
+/* card css */
+.card-custom {
+    background-color: rgba(245,245,245,0);
+    width:200px;
+    /* opacity: 0; */
+}
+
+.card-img {
+    width:75%;
+}
+
+.pri-text-color {
+    color: #676eff;
+}
+
+.pri-text-size {
+    font-size: 1.5rem;
+}
+
+.sec-text-color {
+    color: #72748e;
+}
+
 
 /* @media only screen and (min-width: 992px) {
   .w-100 {
