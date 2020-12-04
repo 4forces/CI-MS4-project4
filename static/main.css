@@ -27,6 +27,11 @@ h1,h2,h3,h4,h5,h6,.nav-link {
     text-decoration-thickness: 3px; */
 }
 
+.bordered {
+    border: 3px solid #72748e;
+    border-radius: 1rem;
+}
+
 .btn-outline-primary, .btn-primary {
     color: #fff;
     background-color: #676eff;
@@ -42,6 +47,20 @@ h1,h2,h3,h4,h5,h6,.nav-link {
     background-color: #676eff!important;
 }
 
+.pri-text-color {
+    color: #676eff;
+}
+
+
+.pri-text-size {
+    font-size: 1.5rem;
+}
+
+.sec-text-color {
+    color: #72748e;
+}
+
+
 /* carousel css */
 .carousel-caption {
     background: rgba(114, 116, 142, 0.8);
@@ -50,10 +69,7 @@ h1,h2,h3,h4,h5,h6,.nav-link {
     bottom: initial;
 }
 
-.bordered {
-    border: 3px solid #72748e;
-    border-radius: 1rem;
-}
+
 
 /* card css */
 .card-custom {
@@ -66,18 +82,27 @@ h1,h2,h3,h4,h5,h6,.nav-link {
     width:75%;
 }
 
-.pri-text-color {
-    color: #676eff;
+
+/* i.pri-text-color:hover {
+    color: #f3bf10;
+} */
+
+a.card-button {
+    /* color: #fff; */
+    /* background-color: #676eff;
+    border-color: #676eff; */
 }
 
-.pri-text-size {
-    font-size: 1.5rem;
+a.card-button:hover {
+    /* color: #f3bf10;
+    text-decoration: none; */
+    /* background-color: #f3bf10;
+    border-color: #f3bf10; */
 }
 
-.sec-text-color {
-    color: #72748e;
+a>i:hover {
+    /* color: #f3bf10; */
 }
-
 
 /* @media only screen and (min-width: 992px) {
   .w-100 {
