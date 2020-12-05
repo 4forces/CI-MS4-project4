@@ -161,4 +161,14 @@ td > i {
 
 td>img {
     width: 150px;
+    background-color: #fff;
+    border-radius:0.25rem;
+}
+
+#cart-checkout {
+    min-width: 145px;
+}
+
+.bg-colored {
+    background-color: rgba(114, 116, 142,0.5);
 }

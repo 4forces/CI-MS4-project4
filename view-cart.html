@@ -48,68 +48,83 @@
     </nav>
 
 <!-- Start of view-cart-display -->
-    <section class="container bordered">
-        <div class="row justify-content-center">
-            <h1 class="my-5">Shopping Cart</h1>
-        </div>
-        <div class="row justify-content-center">
-        <!-- start of table container -->
-            <div class="col-10 table-responsive">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th class="align-middle" scope="col">Image</th>
-                            <th class="align-middle" scope="col">Item</th>
-                            <th class="align-middle" scope="col">Quantity</th>
-                            <th class="align-middle" scope="col">Unit Price</th>
-                            <th class="align-middle" scope="col">Sub-Total</th>
-                            <th class="align-middle" scope="col">Remove</th>                    
-                        </tr>
-                    </thead>
-                    <!-- start of Item list iteration -->
-                    <tbody>
-                        <tr>
-                            <td class="align-middle"><img src="https://sg.cytron.io/image/cache/catalog/products/SN-ENC-MOD/1-512x512.png" alt="Item image"></td>
-                            <td class="align-middle">Slot Type IR Optocoupler Speed Sensor Module LM393 For Arduino Groove Coupler Sensor 3.3V-5V Connect Relay Buzzer Module</td>
-                            <td class="align-middle"><a href="#"><i class="fa fa-minus mr-1 pri-text-color" aria-hidden="true"></i></a> 5 <a href="#"><i class="fa fa-plus ml-1 pri-text-color" aria-hidden="true"></i></a></td>
-                            <td class="align-middle">$4.99</td>
-                            <td class="align-middle">$24.95</td>
-                            <td class="align-middle"><i class="fa fa-trash"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="align-middle"><img src="https://sg.cytron.io/image/cache/catalog/products/SN-ENC-MOD/1-512x512.png" alt="Item image"></td>
-                            <td class="align-middle">Slot Type IR Optocoupler Speed Sensor Module LM393 For Arduino Groove Coupler Sensor 3.3V-5V Connect Relay Buzzer Module</td>
-                            <td class="align-middle"><a href="#"><i class="fa fa-minus mr-1 pri-text-color" aria-hidden="true"></i></a> 5 <a href="#"><i class="fa fa-plus ml-1 pri-text-color" aria-hidden="true"></i></a></td>
-                            <td class="align-middle">$4.99</td>
-                            <td class="align-middle">$24.95</td>
-                            <td class="align-middle"><i class="fa fa-trash"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="align-middle"><img src="https://sg.cytron.io/image/cache/catalog/products/SN-ENC-MOD/1-512x512.png" alt="Item image"></td>
-                            <td class="align-middle">Slot Type IR Optocoupler Speed Sensor Module LM393 For Arduino Groove Coupler Sensor 3.3V-5V Connect Relay Buzzer Module</td>
-                            <td class="align-middle"><a href="#"><i class="fa fa-minus mr-1 pri-text-color" aria-hidden="true"></i></a> 5 <a href="#"><i class="fa fa-plus ml-1 pri-text-color" aria-hidden="true"></i></a></td>
-                            <td class="align-middle">$4.99</td>
-                            <td class="align-middle">$24.95</td>
-                            <td class="align-middle"><i class="fa fa-trash"></i></td>
-                        </tr>
-                        <tr>
-                            <td colspan="4"></td>
-                            <td><h3>Total</h3></td>
-                            <td><h3>$24.95</h3></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="row justify-content-between d-flex mb-3" id="cart-buttons">
-                    <div id="cart-back" class="ml-3">
-                        <a href="#" class="btn btn-primary"><i class="fa fa-arrow-circle-left"></i> Back to Shop</a>
-                    </div>
-                    <div id="cart-checkout" class="mr-3">
-                        <a href="#" class="btn btn-primary"><i class="fa fa-credit-card"></i> Checkout</a>
-                    </div>                    
-                </div>
+    <section class="container">
+        <div class="bordered bg-colored my-3">
+            <div class="row justify-content-center">
+                <h1 class="my-5">Shopping Cart</h1>
             </div>
-        <!-- end of table container -->
-        </div>
+            <div class="row justify-content-center">
+            <!-- start of table container -->
+                <div class="col-10 table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="align-middle" scope="col">Image</th>
+                                <th class="align-middle" scope="col">Item</th>
+                                <th class="align-middle" scope="col">Quantity</th>
+                                <th class="align-middle" scope="col">Unit Price</th>
+                                <th class="align-middle" scope="col">Sub-Total</th>
+                                <th class="align-middle" scope="col">Remove</th>                    
+                            </tr>
+                        </thead>
+                        <!-- start of Item list iteration -->
+                        <tbody>
+                            <tr>
+                                <td class="align-middle"><img src="https://sg.cytron.io/image/cache/catalog/products/SN-ENC-MOD/1-512x512.png" alt="Item image"></td>
+                                <td class="align-middle">Slot Type IR Optocoupler Speed Sensor Module LM393 For Arduino Groove Coupler Sensor 3.3V-5V Connect Relay Buzzer Module</td>
+                                <td class="align-middle"><a href="#"><i class="fa fa-minus mr-1 pri-text-color" aria-hidden="true"></i></a> 5 <a href="#"><i class="fa fa-plus ml-1 pri-text-color" aria-hidden="true"></i></a></td>
+                                <td class="align-middle">$4.99</td>
+                                <td class="align-middle">$24.95</td>
+                                <td class="align-middle"><i class="fa fa-trash"></i></td>
+                            </tr>
+                            <tr>
+                                <td class="align-middle"><img src="https://sg.cytron.io/image/cache/catalog/products/SN-ENC-MOD/1-512x512.png" alt="Item image"></td>
+                                <td class="align-middle">Slot Type IR Optocoupler Speed Sensor Module LM393 For Arduino Groove Coupler Sensor 3.3V-5V Connect Relay Buzzer Module</td>
+                                <td class="align-middle"><a href="#"><i class="fa fa-minus mr-1 pri-text-color" aria-hidden="true"></i></a> 5 <a href="#"><i class="fa fa-plus ml-1 pri-text-color" aria-hidden="true"></i></a></td>
+                                <td class="align-middle">$4.99</td>
+                                <td class="align-middle">$24.95</td>
+                                <td class="align-middle"><i class="fa fa-trash"></i></td>
+                            </tr>
+                            <tr>
+                                <td class="align-middle"><img src="https://sg.cytron.io/image/cache/catalog/products/SN-ENC-MOD/1-512x512.png" alt="Item image"></td>
+                                <td class="align-middle">Slot Type IR Optocoupler Speed Sensor Module LM393 For Arduino Groove Coupler Sensor 3.3V-5V Connect Relay Buzzer Module</td>
+                                <td class="align-middle"><a href="#"><i class="fa fa-minus mr-1 pri-text-color" aria-hidden="true"></i></a> 5 <a href="#"><i class="fa fa-plus ml-1 pri-text-color" aria-hidden="true"></i></a></td>
+                                <td class="align-middle">$4.99</td>
+                                <td class="align-middle">$24.95</td>
+                                <td class="align-middle"><i class="fa fa-trash"></i></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"></td>
+                                <td><h3>Total</h3></td>
+                                <td><h3>$24.95</h3></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <!-- <div class="ml-3"> -->
+                                        <a href="#" class="btn btn-primary" id="cart-back"><i class="fa fa-arrow-circle-left"></i> Back to Shop</a>
+                                    <!-- </div> -->
+                                </td>
+                                <td colspan="4"></td>
+                                <td id="cart-checkout">
+                                    <!-- <div class="mr-3"> -->
+                                        <a href="#" class="btn btn-primary"><i class="fa fa-credit-card"></i> Checkout</a>
+                                    <!-- </div>   -->
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- <div class="row justify-content-between d-flex mb-3">
+                        <div class="ml-3">
+                            <a href="#" class="btn btn-primary"><i class="fa fa-arrow-circle-left"></i> Back to Shop</a>
+                        </div>
+                        <div class="mr-3">
+                            <a href="#" class="btn btn-primary"><i class="fa fa-credit-card"></i> Checkout</a>
+                        </div>                    
+                    </div> -->
+                </div>
+            <!-- end of table container -->
+            </div>
+        </div>    
     </section>
 <!-- End of view-cart-display -->
 
