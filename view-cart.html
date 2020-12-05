@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&family=Raleway&display=swap" rel="stylesheet">
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="static/main.css">
+    <title>Upbeat Engineering</title>
+  </head>
+
+  <body>
+  <div id="view-cart-page">
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand mx-4" href="#"><img src="/static/images/logo.png" id="logo" alt="Site Logo"></a>
+        <button class="navbar-toggler bg-primary ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="my-3 mx-4 ml-lg-auto">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link mx-4" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-4" href="#">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-4" href="#">Login</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- <form class="form-inline mx-4 my-3 ml-lg-auto">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+            </form> -->
+        </div>
+    </nav>
+
+<!-- Start of view-cart-display -->
+    <section class="container bordered">
+        <div class="row justify-content-center">
+            <h1 class="my-5">Shopping Cart</h1>
+        </div>
+        <div class="row justify-content-center">
+        <!-- start of table container -->
+            <div class="col table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="align-middle" scope="col">Image</th>
+                            <th class="align-middle" scope="col">Item</th>
+                            <th class="align-middle" scope="col">Quantity</th>
+                            <th class="align-middle" scope="col">Unit Price</th>
+                            <th class="align-middle" scope="col">Sub-Total</th>
+                            <th class="align-middle" scope="col">Remove</th>                    
+                        </tr>
+                    </thead>
+                    <!-- start of Item list iteration -->
+                    <tbody>
+                        <tr>
+                            <td class="align-middle"><img src="https://sg.cytron.io/image/cache/catalog/products/SN-ENC-MOD/1-512x512.png" alt="Item image"></td>
+                            <td class="align-middle">Slot Type IR Optocoupler Speed Sensor Module LM393 For Arduino Groove Coupler Sensor 3.3V-5V Connect Relay Buzzer Module</td>
+                            <td class="align-middle"><a href="#"><i class="fa fa-minus mr-1 pri-text-color" aria-hidden="true"></i></a> 5 <a href="#"><i class="fa fa-plus ml-1 pri-text-color" aria-hidden="true"></i></a></td>
+                            <td class="align-middle">$4.99</td>
+                            <td class="align-middle">$24.95</td>
+                            <td class="align-middle"><i class="fa fa-trash"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="align-middle"><img src="https://sg.cytron.io/image/cache/catalog/products/SN-ENC-MOD/1-512x512.png" alt="Item image"></td>
+                            <td class="align-middle">Slot Type IR Optocoupler Speed Sensor Module LM393 For Arduino Groove Coupler Sensor 3.3V-5V Connect Relay Buzzer Module</td>
+                            <td class="align-middle"><a href="#"><i class="fa fa-minus mr-1 pri-text-color" aria-hidden="true"></i></a> 5 <a href="#"><i class="fa fa-plus ml-1 pri-text-color" aria-hidden="true"></i></a></td>
+                            <td class="align-middle">$4.99</td>
+                            <td class="align-middle">$24.95</td>
+                            <td class="align-middle"><i class="fa fa-trash"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="align-middle"><img src="https://sg.cytron.io/image/cache/catalog/products/SN-ENC-MOD/1-512x512.png" alt="Item image"></td>
+                            <td class="align-middle">Slot Type IR Optocoupler Speed Sensor Module LM393 For Arduino Groove Coupler Sensor 3.3V-5V Connect Relay Buzzer Module</td>
+                            <td class="align-middle"><a href="#"><i class="fa fa-minus mr-1 pri-text-color" aria-hidden="true"></i></a> 5 <a href="#"><i class="fa fa-plus ml-1 pri-text-color" aria-hidden="true"></i></a></td>
+                            <td class="align-middle">$4.99</td>
+                            <td class="align-middle">$24.95</td>
+                            <td class="align-middle"><i class="fa fa-trash"></i></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"></td>
+                            <td><h3>Total</h3></td>
+                            <td><h3>$24.95</h3></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="row justify-content-between d-flex mb-3" id="cart-buttons">
+                    <div id="cart-back" class="ml-3">
+                        <a href="#" class="btn btn-primary"><i class="fa fa-arrow-circle-left"></i> Back to Shop</a>
+                    </div>
+                    <div id="cart-checkout" class="mr-3">
+                        <a href="#" class="btn btn-primary"><i class="fa fa-credit-card"></i> Checkout</a>
+                    </div>                    
+                </div>
+            </div>
+        <!-- end of table container -->
+        </div>
+    </section>
+<!-- End of view-cart-display -->
+
+</div>
+
+
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+  </body>
+</html>

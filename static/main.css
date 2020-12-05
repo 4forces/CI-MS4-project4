@@ -15,9 +15,19 @@ body {
 }
 
 
-#view-shop-page, #view-item-page {
+#view-shop-page, #view-product-page {
     background: linear-gradient(to bottom, rgba(35,35,47, 0.80) 0%, rgba(35,35,47, 0.80) 100%), url("../static/images/vector14.jpg");
     background-position: center;
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+    background-attachment: fixed;
+    /* height: 100vh; */
+}
+
+
+#view-cart-page {
+    background: linear-gradient(to bottom, rgba(35,35,47, 0.80) 0%, rgba(35,35,47, 0.80) 100%), url("../static/images/vector11.jpg");
+    background-position: left;
     /* background-repeat: no-repeat; */
     background-size: cover;
     background-attachment: fixed;
@@ -103,38 +113,52 @@ h1,h2,h3,h4,h5,h6,.nav-link {
     color: #f3bf10;
 } */
 
-a.card-button {
-    /* color: #fff; */
-    /* background-color: #676eff;
-    border-color: #676eff; */
-}
+/* a.card-button {
+    color: #fff; */
+    background-color: #676eff;
+    border-color: #676eff;
+} */
 
-a.card-button:hover {
-    /* color: #f3bf10;
-    text-decoration: none; */
-    /* background-color: #f3bf10;
-    border-color: #f3bf10; */
-}
+/* a.card-button:hover {
+    color: #f3bf10;
+    text-decoration: none;
+    background-color: #f3bf10;
+    border-color: #f3bf10;
+} */
 
 
 /* View Item CSS */
-p > a > i, {
+p>a>i, {
     font-size: larger;
 }
 
-h5 > a > i.pri-text-color:hover {
+h5>a>i.pri-text-color:hover, #cart-checkout>i:hover, #cart-back>i:hover, td>i:hover, td>a>i.pri-text-color:hover {
     color: #f3bf10;
 }
 
 
-
-/* @media only screen and (min-width: 992px) {
-  .w-100 {
-    width: 100% !important;
-    height: 75vh;
-  }
+/* Cart CSS */
+/* #cart-buttons {
+    display: flex;
 } */
 
-/* #logo {
-    height: 16rem;
+/* #cart-back, #cart-checkout {
+    justify-content: space-around;
 } */
+
+.table {
+    color: #fff;
+}
+
+.table td, .table th {
+    text-align: center;
+}
+
+td > i {
+    font-size: xx-large!important;
+    color: #676eff;
+}
+
+td>img {
+    width: 150px;
+}
