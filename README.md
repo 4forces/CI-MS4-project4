@@ -1,7 +1,8 @@
 
 
 ## Credits
-- Design: https://www.behance.net/gallery/62918019/GamingGear-E-commerce-Website searched via Pinterest
+- Look and feel [HACKADAY](https://hackaday.com/blog/)
+- Design: https://www.behance.net/gallery/62918019/GamingGear-E-commerce-Website searched via [Pinterest](https://www.pinterest.com/)
 - [Font 'Gotham' replacement](https://fontsplugin.com/google-fonts-gotham/)
 - graphics: 
 - [logo](https://www.freelogodesign.org/)
@@ -45,6 +46,8 @@ quickly get back on track with building.
 ## UX and UI
 
 - For this project, this developer decided to do up the frontend html first proceeding to Django. Reason being to have an overview of the look and layout first before integrating into Django. 
+This website is an attempt to do up an e-commerce website for the potential site-owner, who is a relative of his, who is looking to do an online business related to sales of engineering components and design.
+This developer followed the preferred theme of the potential site-owner, who recommended the look and feel reference this [site](https://hackaday.com/blog/)
 
 This site is designed in mind to be visually appealing to parents and kids-lovers. From the 
 [colour palette](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/readme/color-palette2.png) used to the font family 
@@ -80,6 +83,8 @@ The colour palette used is as follows:
 * [ER Diagram and Relationship Schema](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/readme/erd2-rs2.png)
 
 ## Features
+
+### App: main, product, Category, q&a, cart, checkout, users
 
 This site has 5 main sections: 
 
