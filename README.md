@@ -12,6 +12,7 @@
 
 ## Technologies
 - [fontawesome](https://fontawesome.com/)
+- [favicon](https://favicon.io/favicon-converter/)
 
 
 ## bugs
