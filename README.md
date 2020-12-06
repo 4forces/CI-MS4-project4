@@ -44,6 +44,8 @@ quickly get back on track with building.
 
 ## UX and UI
 
+- For this project, this developer decided to do up the frontend html first proceeding to Django. Reason being to have an overview of the look and layout first before integrating into Django. 
+
 This site is designed in mind to be visually appealing to parents and kids-lovers. From the 
 [colour palette](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/readme/color-palette2.png) used to the font family 
 ([Fredoka One](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/readme/font-fredokaone.PNG) for headings, 
