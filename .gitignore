@@ -1,3 +1,4 @@
+## Initial .gitignore entries
 core.Microsoft*
 core.mongo*
 core.python*
@@ -5,6 +6,7 @@ env.py
 __pycache__/
 *.py[cod]
 
+## Pasted below from link in Lecturer's Labsheet
 
 # Created by https://www.toptal.com/developers/gitignore/api/django
 # Edit at https://www.toptal.com/developers/gitignore?templates=django
