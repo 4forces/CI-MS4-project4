@@ -10,6 +10,7 @@
 - Cards from [getbootstrap.com](https://getbootstrap.com/docs/4.5/examples/carousel/), [w3schools](https://www.w3schools.com/bootstrap4/bootstrap_cards.asp)
 - Card background to transparent [here](https://stackoverflow.com/questions/42430987/how-to-change-the-opacity-of-a-card-block-in-bootstrap-4)
 - resize img to fit in container [here](https://stackoverflow.com/questions/3029422/how-do-i-auto-resize-an-image-to-fit-a-div-container)
+- Boutique Ado lessons and [example](https://github.com/ckz8780/boutique_ado_v1) in Code Institute LMS for a 'walkthrough' code as your view
 
 ## Technologies
 - [fontawesome](https://fontawesome.com/)
