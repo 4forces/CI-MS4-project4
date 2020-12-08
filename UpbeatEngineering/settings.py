@@ -79,6 +79,8 @@ TEMPLATES = [
     },
 ]
 
+# Start of allauth settings
+
 AUTHENTICATION_BACKENDS = [
     # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',
@@ -95,8 +97,11 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
-LOGIN_REDIRECT_URL = '/success'
+# Changed '/success' to '/'  redirects to store homepage
+LOGIN_REDIRECT_URL = '/'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+#  End of allauth settings
 
 WSGI_APPLICATION = 'UpbeatEngineering.wsgi.application'
 
