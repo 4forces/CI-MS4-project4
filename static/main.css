@@ -60,6 +60,10 @@ h1,h2,h3,h4,h5,h6,.nav-link {
     text-decoration-thickness: 3px; */
 }
 
+.navbar-inner {
+    background:transparent;
+}
+
 .bordered {
     border: 3px solid #72748e;
     border-radius: 1rem;
