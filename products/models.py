@@ -22,15 +22,15 @@ class Product(models.Model):
 
 
 class Supplier(models.Model):
-    supplier_name = models.CharField(blank=False, max_length=30)
+    name = models.CharField(blank=False, max_length=30)
     country = models.CharField(blank=True, max_length=90)
 
     def __str__(self):
-        return self.supplier_name
+        return self.name
 
 
 class Category(models.Model):
-    category_name = models.CharField(blank=False, max_length=30)
+    name = models.CharField(blank=False, max_length=30)
 
     def __str__(self):
-        return self.category_name
+        return self.name
