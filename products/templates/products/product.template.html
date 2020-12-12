@@ -1,11 +1,11 @@
 {% extends "base.template.html" %}
 {% load static %}
 
+{% block page_id %}view-product-page{% endblock %}
+
 {% block content %}
 
-<div id="view-product-page">
-
-<!-- Start of view-product-display -->
+<!-- Start of view-single-product-display -->
     <section class="container">
         <div class="row justify-content-center">
             <h1 class="my-5">View Product</h1>
@@ -49,8 +49,6 @@
         </div>
         {% endfor %}
     </section>
-<!-- End of view-product-display -->
-
-</div>
+<!-- End of view-singlo-product-display -->
 
 {% endblock %}
