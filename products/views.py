@@ -1,7 +1,19 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, get_object_or_404
+from .models import Product
 
 
 # Create your views here.
-def index(request):
+def view_shop(request):
     # return HttpResponse("Welcome to Products App")
-    return render(request, 'products/products.template.html')
+    products = Product.objects.all()
+    return render(request, 'products/products_shop.template.html', {
+        'products': products
+    })
+
+
+def view_single_product(request):
+    # return HttpResponse("Welcome to Products App")
+    product = get_object_or_404(Product, pk=product_id)
+    return render(request, 'products/product.template.html', {
+        'product': product
+    })
