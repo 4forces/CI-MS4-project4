@@ -10,13 +10,14 @@
         <div class="row justify-content-center">
             <h1 class="my-5">View Product</h1>
         </div>
-        {% for p in product %}
+
         <div class="row justify-content-center my-5">
         <!-- start of product container -->
+
             <div class="col-lg-8">
                <div class="card bordered card-view-item">
                     <div class="row text-center m-3">
-                        <h5 class="card-title">{{p.name}}</h5>
+                        <h5 class="card-title">{{product.name}}</h5>
                     </div>
                     <div class="row align-items-center text-center m-3">
                         <div class="col-md-6">
@@ -24,10 +25,10 @@
                         </div>
                         <div class="col-md-6">
                             <div class="card-body">
-                                <h4 class="card-text pri-text-color pri-text-size mb-3">Price: SGD$ {{p.cost}}</h4>
-                                <p class="card-text">In stock: {{p.quantity}} {{p.unit}}</p>
-                                <p class="card-text">Category: {{p.category}}</p>
-                                <p class="card-text">Part Number: {{p.part_number}}</p>
+                                <h4 class="card-text pri-text-color pri-text-size mb-3">Price: $ {{product.cost}}</h4>
+                                <p class="card-text">In stock: {{product.quantity}} {{product.unit}}</p>
+                                <p class="card-text">Category: {{product.category}}</p>
+                                <p class="card-text">Part Number: {{product.part_number}}</p>
                                 <p class="card-text">Ships from: Singapore</p>
                                 <h5 class="card-text">
                                     <a href="#"><i class="fa fa-minus-square mr-2 pri-text-color" aria-hidden="true"></i></a>
@@ -35,19 +36,20 @@
                                     <a href="#"><i class="fa fa-plus-square ml-2 pri-text-color" aria-hidden="true"></i></a>
                                 </h5>
                                 <a href="#" class="btn btn-primary mt-3"><i class="fa fa-plus-circle"></i> Add to Cart</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row text-center">
-                    <div class="col px-4 m-3">
-                        <p>{{p.desc}}</p>
+                    <div class="row text-center">
+                        <div class="col px-4 m-3">
+                            <p>{{product.desc}}</p>
+                        </div>
                     </div>
-                </div>
                 </div>        
             </div>
+
         <!-- end of product container -->
         </div>
-        {% endfor %}
+
     </section>
 <!-- End of view-singlo-product-display -->
 
