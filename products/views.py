@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from .models import Product
 from .forms import SearchForm, ProductForm
 
@@ -23,7 +23,17 @@ def view_single_product(request, product_id):
 
 
 def create_product(request):
-    create_form = ProductForm()
-    return render(request, 'products/product_create.template.html', {
-        'form':create_form
-    })
+    if request.method == 'POST':
+        create_form = ProductForm(request.POST)
+        if create_form.is_valid():
+            create_form.save()
+            return redirect(reverse(view_shop))
+        else:
+            return render(request, 'products/product_create.template.html', {
+                'form': create_form
+            })
+    else:
+        create_form = ProductForm()
+        return render(request, 'products/product_create.template.html', {
+            'form': create_form
+        })
