@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Product
-from .forms import SearchForm
+from .forms import SearchForm, ProductForm
 
 
 # Create your views here.
@@ -24,6 +24,6 @@ def view_single_product(request, product_id):
 
 def create_product(request):
     create_form = ProductForm()
-    return render(request, 'products/create.template.html', {
+    return render(request, 'products/product_create.template.html', {
         'form':create_form
     })

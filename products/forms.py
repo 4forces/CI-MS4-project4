@@ -7,3 +7,12 @@ class SearchForm(forms.Form):
                            label="Search product by name")
     category = forms.ModelChoiceField(queryset=Category.objects.all(),
                                       required=False, label="Select Category")
+
+
+class ProductForm(forms.ModelForm):
+    # 'meta' defines which model ('product') this form references
+    class Meta:
+        model = Product
+        fields = ('name', 'cost', 'unit', 'quantity',
+                  'category', 'part_number', 'desc',
+                  'supplier')
