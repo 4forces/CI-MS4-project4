@@ -1,5 +1,5 @@
 from django import forms
-from .models import Product, Category
+from .models import Product, Category, Supplier
 
 
 class SearchForm(forms.Form):
@@ -15,4 +15,18 @@ class ProductForm(forms.ModelForm):
         model = Product
         fields = ('name', 'cost', 'unit', 'quantity',
                   'category', 'part_number', 'desc',
-                  'supplier')
+                  'supplier',)
+
+
+class CategoryForm(forms.ModelForm):
+    # 'meta' defines which model ('product') this form references
+    class Meta:
+        model = Category
+        fields = ('name',)
+
+
+class SupplierForm(forms.ModelForm):
+    # 'meta' defines which model ('product') this form references
+    class Meta:
+        model = Supplier
+        fields = ('name','country',)

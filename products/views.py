@@ -37,3 +37,4 @@ def create_product(request):
         return render(request, 'products/product_create.template.html', {
             'form': create_form
         })
+
