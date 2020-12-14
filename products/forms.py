@@ -29,4 +29,4 @@ class SupplierForm(forms.ModelForm):
     # 'meta' defines which model ('product') this form references
     class Meta:
         model = Supplier
-        fields = ('name','country',)
+        fields = ('name', 'country',)

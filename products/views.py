@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from .models import Product
-from .forms import SearchForm, ProductForm
+from .forms import SearchForm, ProductForm, CategoryForm, SupplierForm
 
 
 # Create your views here.
@@ -27,7 +27,7 @@ def create_product(request):
         create_form = ProductForm(request.POST)
         if create_form.is_valid():
             create_form.save()
-            return redirect(reverse(view_shop))
+            return redirect(reverse(create_product))
         else:
             return render(request, 'products/product_create.template.html', {
                 'form': create_form
@@ -38,3 +38,36 @@ def create_product(request):
             'form': create_form
         })
 
+
+def create_category(request):
+    if request.method == 'POST':
+        create_form = CategoryForm(request.POST)
+        if create_form.is_valid():
+            create_form.save()
+            return redirect(reverse(create_category))
+        else:
+            return render(request, 'products/category_create.template.html', {
+                'form': create_form
+            })
+    else:
+        create_form = CategoryForm()
+        return render(request, 'products/category_create.template.html', {
+                'form': create_form
+        })
+
+
+def create_supplier(request):
+    if request.method == 'POST':
+        create_form = SupplierForm(request.POST)
+        if create_form.is_valid():
+            create_form.save()
+            return redirect(reverse(create_supplier))
+        else:
+            return render(request, 'products/supplier_create.template.html', {
+                'form': create_form
+            })
+    else:
+        create_form = SupplierForm()
+        return render(request, 'products/supplier_create.template.html', {
+                'form': create_form
+        })

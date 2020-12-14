@@ -1,0 +1,28 @@
+{% extends "base.template.html" %}
+{% load static %}
+
+{% block page_id %}create-product-page{% endblock %}
+
+{% block content %}
+<!-- Start of create-supplier-display -->
+<section class="container">
+
+    <div class="row justify-content-center">
+        <h1 class="my-5">Add Supplier</h1>
+    </div>
+    <div class="row justify-content-center my-5">
+        <!-- start of form container -->
+            <div class="col-lg-8">
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p}}
+                    <input class="btn btn-primary" type="Submit">
+                </form>
+            </div>
+        <!-- end of form container -->
+    </div>
+
+    </section>
+    <!-- End of create-supplier-display -->
+
+{% endblock %}
