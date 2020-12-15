@@ -3,7 +3,8 @@ from .models import Product
 from .forms import SearchForm, ProductForm, CategoryForm, SupplierForm
 
 
-# Create your views(Read) here.
+# Create your views here.
+# 'READ' functions
 def view_shop(request):
     # return HttpResponse("Welcome to Products App")
     products = Product.objects.all()
@@ -22,7 +23,7 @@ def view_single_product(request, product_id):
     })
 
 
-# Create your 'Create' here
+# 'CREATE' functions
 def create_product(request):
     if request.method == 'POST':
         create_form = ProductForm(request.POST)
@@ -74,7 +75,7 @@ def create_supplier(request):
         })
 
 
-# Create your 'Update' here
+# 'UPDATE' functions
 def update_product(request, product_id):
     # Retrieves the product
     product_updating = get_object_or_404(Product, pk=product_id)
@@ -93,4 +94,16 @@ def update_product(request, product_id):
         update_form = ProductForm(instance=product_updating)
         return render(request, 'products/product_update.template.html', {
             "form": update_form
+        })
+
+
+# 'DELETE' functions
+def delete_product(request, product_id):
+    product_deletion = get_object_or_404(Product, pk=product_id)
+    if request.method == 'POST':
+        product_deletion.delete()
+        return redirect(view_shop)
+    else: 
+        return render(request, 'products/product_delete.template.html', {
+            "product": product_deletion
         })

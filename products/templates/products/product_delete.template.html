@@ -1,0 +1,28 @@
+{% extends "base.template.html" %}
+{% load static %}
+
+{% block page_id %}create-product-page{% endblock %}
+
+{% block content %}
+<!-- Start of delete-product-display -->
+<section class="container">
+    <div class="row justify-content-center text-center my-5">
+        <!-- start of form container -->
+            <div class="col-lg-8">
+                <div class="bordered">
+                    <h4 class="mt-5">Are you sure you want to delte the product <b><i>"{{product.name}}"</i></b></h4>
+                    <form class="my-5" method="POST">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <input class="btn btn-danger" type="Submit" value="Yes">
+                        <a class="btn btn-secondary" href="{% url 'view_shop' %}">No</a>
+                    </form>
+                </div>
+            </div>
+        <!-- end of form container -->
+    </div>
+
+</section>
+<!-- End of delete-product-display -->
+
+{% endblock %}
