@@ -38,7 +38,7 @@ body {
 }
 
 
-#login-page, #register-page {
+#login-page, #register-page, #logout-page {
     background: linear-gradient(to bottom, rgba(35,35,47, 0.80) 0%, rgba(35,35,47, 0.80) 100%), url("../static/images/vector13.jpg");
     background-position: center;
     /* background-repeat: no-repeat; */
@@ -80,6 +80,8 @@ h1,h2,h3,h4,h5,h6,.nav-link {
 .bordered {
     border: 3px solid #72748e;
     border-radius: 1rem;
+    backdrop-filter: blur(5px);
+    box-shadow: inset 0 0 0 2000px rgba(255,255,255,0.05);
 }
 
 .btn-outline-primary, .btn-primary {
@@ -101,6 +103,14 @@ h1,h2,h3,h4,h5,h6,.nav-link {
     color: #676eff;
 }
 
+.ter-text-color {
+    color: #f3bf10;
+}
+
+.ter-text-color:hover {
+    color: #f3dc10;
+    text-decoration: none;
+}
 
 .pri-text-size {
     font-size: 1.5rem;
@@ -113,7 +123,8 @@ h1,h2,h3,h4,h5,h6,.nav-link {
 
 /* carousel css */
 .carousel-caption {
-    background: rgba(114, 116, 142, 0.8);
+    backdrop-filter: blur(5px);
+    box-shadow: inset 0 0 0 2000px rgba(114,116,142,0.45);
     top: 50%;
     transform: translateY(-50%);
     bottom: initial;
@@ -129,7 +140,7 @@ h1,h2,h3,h4,h5,h6,.nav-link {
 /* card css */
 /* .card-custom {
     width:200px;
-    /* opacity: 0; */
+    /* opacity: 0;
 } */
 
 /* .card-img-size {
@@ -155,7 +166,7 @@ h1,h2,h3,h4,h5,h6,.nav-link {
 
 
 /* View Item CSS */
-p>a>i, {
+p>a>i {
     font-size: larger;
 }
 
