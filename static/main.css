@@ -77,6 +77,11 @@ h1,h2,h3,h4,h5,h6,.nav-link {
     background:transparent;
 }
 
+.navbar {
+    backdrop-filter: blur(10px);
+    box-shadow: inset 0 0 0 1000px rgba(35,35,47, 0.3);
+}
+
 .bordered {
     border: 3px solid #72748e;
     border-radius: 1rem;
@@ -99,11 +104,19 @@ h1,h2,h3,h4,h5,h6,.nav-link {
     background-color: #676eff!important;
 }
 
+.pri-text-size {
+    font-size: 1.5rem;
+}
+
 .pri-text-color {
     color: #676eff;
 }
 
-.ter-text-color {
+.sec-text-color {
+    color: #72748e;
+}
+
+.ter-text-color, .ter-text-color2 {
     color: #f3bf10;
 }
 
@@ -112,19 +125,10 @@ h1,h2,h3,h4,h5,h6,.nav-link {
     text-decoration: none;
 }
 
-.pri-text-size {
-    font-size: 1.5rem;
-}
-
-.sec-text-color {
-    color: #72748e;
-}
-
 
 /* carousel css */
 .carousel-caption {
-    backdrop-filter: blur(5px);
-    box-shadow: inset 0 0 0 2000px rgba(114,116,142,0.45);
+    box-shadow: inset 0 0 0 2000px rgba(114,116,142,0.8);
     top: 50%;
     transform: translateY(-50%);
     bottom: initial;
