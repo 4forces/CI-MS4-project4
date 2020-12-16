@@ -60,7 +60,7 @@
                     <li class="nav-item">
                         <a class="nav-link mx-4" href="{% url 'view_shop' %}">Shop</a>
                     </li>
-                    {% if use.is_authenticated %}
+                    {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link mx-4" href="{% url 'account_logout' %}">Logout</a>
                     </li>
