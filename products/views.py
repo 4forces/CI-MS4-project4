@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.contrib.auth.decorators import login_required, permission_required
 from .models import Product
 from .forms import SearchForm, ProductForm, CategoryForm, SupplierForm
 
@@ -24,6 +25,7 @@ def view_single_product(request, product_id):
 
 
 # 'CREATE' functions
+@login_required
 def create_product(request):
     if request.method == 'POST':
         create_form = ProductForm(request.POST)
@@ -40,7 +42,7 @@ def create_product(request):
             'form': create_form
         })
 
-
+@login_required
 def create_category(request):
     if request.method == 'POST':
         create_form = CategoryForm(request.POST)
@@ -57,7 +59,7 @@ def create_category(request):
                 'form': create_form
         })
 
-
+@login_required
 def create_supplier(request):
     if request.method == 'POST':
         create_form = SupplierForm(request.POST)
@@ -76,6 +78,7 @@ def create_supplier(request):
 
 
 # 'UPDATE' functions
+@login_required
 def update_product(request, product_id):
     # Retrieves the product
     product_updating = get_object_or_404(Product, pk=product_id)
@@ -98,6 +101,7 @@ def update_product(request, product_id):
 
 
 # 'DELETE' functions
+@login_required
 def delete_product(request, product_id):
     product_deletion = get_object_or_404(Product, pk=product_id)
     if request.method == 'POST':
