@@ -60,9 +60,18 @@
                     <li class="nav-item">
                         <a class="nav-link mx-4" href="{% url 'view_shop' %}">Shop</a>
                     </li>
+                    {% if use.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link mx-4" href="#">Login</a>
+                        <a class="nav-link mx-4" href="{% url 'account_logout' %}">Logout</a>
                     </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link mx-4" href="{% url 'account_login' %}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-4" href="{% url 'account_signup' %}">Register</a>
+                    </li>
+                    {% endif %}
                 </ul>
             </div>
             <!-- <form class="form-inline mx-4 my-3 ml-lg-auto">
