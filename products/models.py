@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 
 # Create your models here.
@@ -16,6 +17,7 @@ class Product(models.Model):
                               on_delete=models.CASCADE, default=1)
     supplier = models.ForeignKey('Supplier',
                                  on_delete=models.CASCADE, default=1)
+    cover = CloudinaryField()
 
     def __str__(self):
         return self.name
