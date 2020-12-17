@@ -32,8 +32,8 @@ def create_product(request):
         create_form = ProductForm(request.POST)
         if create_form.is_valid():
             create_form.save()
-            messages.success(request, f"Product "
-                             f"{create_form.cleaned_data['name']} created")
+            messages.success(request, f'Product: '
+                             f'"{create_form.cleaned_data["name"]}" created')
             return redirect(reverse(create_product))
         else:
             return render(request, 'products/product_create.template.html', {
@@ -52,6 +52,8 @@ def create_category(request):
         create_form = CategoryForm(request.POST)
         if create_form.is_valid():
             create_form.save()
+            messages.success(request, f'Category: '
+                             f'"{create_form.cleaned_data["name"]}" created')
             return redirect(reverse(create_category))
         else:
             return render(request, 'products/category_create.template.html', {
@@ -70,6 +72,8 @@ def create_supplier(request):
         create_form = SupplierForm(request.POST)
         if create_form.is_valid():
             create_form.save()
+            messages.success(request, f'Supplier: '
+                             f'"{create_form.cleaned_data["name"]}" created')
             return redirect(reverse(create_supplier))
         else:
             return render(request, 'products/supplier_create.template.html', {
@@ -92,6 +96,8 @@ def update_product(request, product_id):
         update_form = ProductForm(request.POST, instance=product_updating)
         if update_form.is_valid():
             update_form.save()
+            messages.info(request, f'Product: '
+                          f'"{update_form.cleaned_data["name"]}" updated')
             return redirect(reverse(view_shop))
         else:
             return render(request, 'products/product_update.template.html', {
@@ -111,6 +117,7 @@ def delete_product(request, product_id):
     product_deletion = get_object_or_404(Product, pk=product_id)
     if request.method == 'POST':
         product_deletion.delete()
+        messages.error(request, f"Product deleted")
         return redirect(view_shop)
     else:
         return render(request, 'products/product_delete.template.html', {
