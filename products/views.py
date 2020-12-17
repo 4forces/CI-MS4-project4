@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
-from django.contrib.auth.decorators import login_required, permission_required
+from django.contrib.auth.decorators import login_required
 from .models import Product
 from .forms import SearchForm, ProductForm, CategoryForm, SupplierForm
+from django.contrib import messages
 
 
 # Create your views here.
@@ -31,6 +32,8 @@ def create_product(request):
         create_form = ProductForm(request.POST)
         if create_form.is_valid():
             create_form.save()
+            messages.success(request, f"Product "
+                             f"{create_form.cleaned_data['name']} created")
             return redirect(reverse(create_product))
         else:
             return render(request, 'products/product_create.template.html', {
@@ -41,6 +44,7 @@ def create_product(request):
         return render(request, 'products/product_create.template.html', {
             'form': create_form
         })
+
 
 @login_required
 def create_category(request):
@@ -58,6 +62,7 @@ def create_category(request):
         return render(request, 'products/category_create.template.html', {
                 'form': create_form
         })
+
 
 @login_required
 def create_supplier(request):
@@ -107,7 +112,7 @@ def delete_product(request, product_id):
     if request.method == 'POST':
         product_deletion.delete()
         return redirect(view_shop)
-    else: 
+    else:
         return render(request, 'products/product_delete.template.html', {
             "product": product_deletion
         })
