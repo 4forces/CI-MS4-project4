@@ -1,5 +1,6 @@
 from django import forms
 from .models import Product, Category, Supplier
+from cloudinary.forms import CloudinaryJsFileField
 
 
 class SearchForm(forms.Form):
@@ -16,6 +17,7 @@ class ProductForm(forms.ModelForm):
         fields = ('name', 'cost', 'unit', 'quantity',
                   'category', 'part_number', 'desc',
                   'supplier',)
+    cover = CloudinaryJsFileField()
 
 
 class CategoryForm(forms.ModelForm):
