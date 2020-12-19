@@ -67,7 +67,7 @@
             },
         })
         .on('cloudinarydone', function (e, data) {
-            $('.status_value').text('Updating backend...');
+            $('.status_value').text('Updating backend... done');
         var info = $('<div class="uploaded_info"/>');
         // $(info).append($('<div class="data"/>').append(
         //     prettydump(data.result)
@@ -81,7 +81,7 @@
             })
         ));
         $('.uploaded_info_holder').append(info);
-        $('#form  input[type="file"]').parent().parent().remove();
+        $('#form input[type="file"]').parent().parent().remove();
         });
     });
 </script>

@@ -141,6 +141,13 @@ h1,h2,h3,h4,h5,h6,.nav-link {
 }
 
 
+/* Create-Product Form Divider CSS */
+.dividers {
+    height: 2px;
+    border-width: 0;
+    background-color: #72748e;
+}
+
 /* card css */
 /* .card-custom {
     width:200px;
@@ -178,6 +185,10 @@ h5>a>i.pri-text-color:hover, #cart-checkout>i:hover, #cart-back>i:hover, td>i:ho
     color: #f3bf10;
 }
 
+/* ALL CODE BELOW
+ FROM THIS POINT 
+ONWARDS NOT USED
+ DUE TO CRISPY FORMS */
 
 /* login CSS */
 #forgot-pw {
