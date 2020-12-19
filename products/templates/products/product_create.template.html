@@ -16,23 +16,22 @@
     </div>
     <div class="row justify-content-center my-5">
         <!-- start of form container -->
-        <div id="form">
-            <form method="POST" enctype="multipart/form-data">
-                {%csrf_token%}
-                {{form|crispy}}
-                <input type="submit"/>
-            </form>
-        </div>
+        <div class="col-lg-8 bordered p-3">
+            <div id="form">
+                <form method="POST" enctype="multipart/form-data">
+                    {%csrf_token%}
+                    {{form|crispy}}
+                    <input class="btn btn-primary" type="submit"/>
+                </form>
+            </div>
+        <hr class="dividers">
+            <div class="status">
+                <p>File Upload Status: <span class="status_value">Idle</span></p>
+            </div>
 
-        <div class="status">
-            <h2>Status</h2>
-            <span class="status_value">Idle</span>
+            <div class="uploaded_info_holder">        
+            </div>
         </div>
-
-        <div class="uploaded_info_holder">
-        
-        </div>
-
         <!-- end of form container -->
     </div>
 
@@ -69,18 +68,18 @@
         })
         .on('cloudinarydone', function (e, data) {
             $('.status_value').text('Updating backend...');
-            var info = $('<div class="uploaded_info"/>');
-            $(info).append($('<div class="data"/>').append(
-                prettydump(data.result)
-            ));
-            $(info).append($('<div class="image"/>').append(
-                $.cloudinary.image(data.result.public_id, {
-                    format: data.result.format,
-                    width: 150,
-                    height: 150, 
-                    crop: "fit"
-                })
-            ));
+        var info = $('<div class="uploaded_info"/>');
+        // $(info).append($('<div class="data"/>').append(
+        //     prettydump(data.result)
+        // ));
+        $(info).append($('<div class="image"/>').append(
+            $.cloudinary.image(data.result.public_id, {
+                format: data.result.format,
+                width: 300,
+                height: 300, 
+                crop: "fit"
+            })
+        ));
         $('.uploaded_info_holder').append(info);
         $('#form  input[type="file"]').parent().parent().remove();
         });
