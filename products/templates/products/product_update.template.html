@@ -1,6 +1,9 @@
 {% extends "base.template.html" %}
 {% load static %}
 
+{% load crispy_forms_tags %}
+{% load cloudinary %}
+
 {% block page_id %}create-product-page{% endblock %}
 
 {% block content %}
@@ -10,21 +13,79 @@
     <div class="row justify-content-center">
         <h1 class="my-3">Update Product</h1>
     </div>
-    <div class="row justify-content-center text-center my-5">
+
+    <div class="row justify-content-center my-5">
         <!-- start of form container -->
-            <div class="col-lg-8">
-                <div class="bordered p-3">
-                    <form method="POST">
-                        {% csrf_token %}
-                        {{ form.as_p}}
-                        <input class="btn btn-primary" type="Submit">
-                    </form>
-                </div>
+        <div class="col-lg-8 bordered p-3">
+            <div id="form">
+                <form method="POST" enctype="multipart/form-data">
+                    {%csrf_token%}
+                    {{form|crispy}}
+                    <div class="text-center">
+                        <input class="btn btn-primary" type="submit"/>
+                    </div>
+                </form>
             </div>
+        <hr class="dividers">
+            <div class="status">
+                <p>File Upload Status: <span class="status_value">Idle</span></p>
+            </div>
+
+            <div class="uploaded_info_holder">        
+            </div>
+        </div>
         <!-- end of form container -->
     </div>
 
 </section>
 <!-- End of update-product-display -->
+
+{% endblock %}
+
+{% block postloadjs %}
+<!-- cloudinary_includes -->
+{% cloudinary_includes %}
+<!-- cloudinary_js_config -->
+{% cloudinary_js_config %}
+<!-- Source: https://cloudinary.com/documentation/django_image_and_video_upload -->
+<!-- Reference code: https://github.com/cloudinary/cloudinary-django-sample/blob/master/photo_album/templates/upload.html#L87 -->
+<script>
+    function prettydump(obj) {
+        ret = ""
+        $.each(obj, function(key, value) {
+        ret += "<tr><td>" + key + "</td><td>" + value + "</td></tr>";
+        });
+        return ret;
+    }
+    $(function () {
+        $('#form input[type="file"]')
+        .cloudinary_fileupload({
+            dropZone: '#form',
+            start: function () {
+                $('.status_value').text('Starting direct upload...');
+            },
+            progress: function () {
+                $('.status_value').text('Uploading...');
+            },
+        })
+        .on('cloudinarydone', function (e, data) {
+            $('.status_value').text('Updating backend... done');
+        var info = $('<div class="uploaded_info"/>');
+        // $(info).append($('<div class="data"/>').append(
+        //     prettydump(data.result)
+        // ));
+        $(info).append($('<div class="image"/>').append(
+            $.cloudinary.image(data.result.public_id, {
+                format: data.result.format,
+                width: 300,
+                height: 300, 
+                crop: "fit"
+            })
+        ));
+        $('.uploaded_info_holder').append(info);
+        $('#form input[type="file"]').parent().parent().remove();
+        });
+    });
+</script>
 
 {% endblock %}
