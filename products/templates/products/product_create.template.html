@@ -17,10 +17,10 @@
     <div class="row justify-content-center my-5">
         <!-- start of form container -->
             <div class="col-lg-8">
-                <div class="bordered p-3">
-                    <form method="POST">
+                <div class="bordered p-3" id="form">
+                    <form method="POST" enctype="multipart/form-data">
                         {% csrf_token %}
-                        {{ form|crispy}}
+                        {{ form|crispy }}
                         <input class="btn btn-primary" type="Submit">
                     </form>
                 </div>
@@ -47,47 +47,45 @@
     <!-- cloudinary_js_config -->
     {% cloudinary_js_config %}
 <!-- Source: https://cloudinary.com/documentation/django_image_and_video_upload -->
+<!-- Reference code: https://github.com/cloudinary/cloudinary-django-sample/blob/master/photo_album/templates/upload.html#L87 -->
 <script>
-  function prettydump(obj) {
-      ret = ""
-      $.each(obj, function(key, value) {
-          ret += "<tr><td>" + key + "</td><td>" + value + "</td></tr>";
-      });
-      return ret;
-  }
-
-  $(function(){
-        $("#form input[type='file']").cloudinary_fileupload({
-            dropZone: "#form",
-            start:function(){
-                $('.status_value').text("Starting direct upload")
+function prettydump(obj) {
+    var ret = ""
+    $.each(obj, function(key, value) {
+        ret += "<tr><td>" + key + "</td><td>" + value + "</td></tr>";
+    });
+    return ret;
+}
+$(function() {
+    $('#form input[type="file"]').cloudinary_fileupload({
+            dropZone: '#form',
+            start: function() {
+                $('.status_value').text('Starting direct upload...');
             },
-            progress: function(){
-                $('.status_value').text('uploading')
-            }
+            progress: function() {
+                $('.status_value').text('Uploading...');
+            },
         })
-        .on('cloudinarydone', function(e, data){
-            $('.status_value').text('Updating backend');
-            let info = $('<div class="uploaded_info"/>')
-            $(info).append(
-                "<div class='data'/>"
-            ).append(prettydump(data.result));
-
-            $(info).append(
-                $('<div class="image"/>').append(
-                    $.cloudinary.image(data.result.public_id,{
-                        format: data.result.format,
-                        width: 150,
-                        height: 150,
-                        crop: 'fill'
-                    })
-                )          
+        .on('cloudinarydone', function(e, data) {
+            $('.status_value').text('Updating backend...');
             
-            ) //end append
-            $('.uploaded_info_folder').append(info);
+            // $.post(this.form.action, $(this.form).serialize()).always(function (result, status, jqxhr) {
+            //     $('.status_value').text(result.errors ? JSON.stringify(result.errors) : status);
+            // });
+
+            var info = $('<div class="uploaded_info"/>');            
+            // $(info).append($('<div class="data"/>').append(prettydump(data.result)));
+            $(info).append($('<div class="image"/>').append(
+                $.cloudinary.image(data.result.public_id, {
+                    format: data.result.format,
+                    width: 150,
+                    height: 150,
+                    crop: "fill"
+                })
+            ));
+            $('.uploaded_info_holder').append(info);
             $('#form input[type="file"]').remove();
         });
-
-  })
+});
 </script>
 {% endblock %}
