@@ -1,4 +1,4 @@
-from django.shortcuts import get_object_or_404, redirect
+from django.shortcuts import get_object_or_404, redirect, render, reverse
 from django.contrib import messages
 
 from products.models import Product
@@ -7,28 +7,41 @@ from products.models import Product
 
 
 def add_to_cart(request, product_id):
+    product = get_object_or_404(Product, pk=product_id)
     # get existing cart from session storage
     # key = 'shopping_cart'
     cart = request.session.get('shopping_cart', {})
 
     if product_id not in cart:
         product = get_object_or_404(Product, pk=product_id)
-        # add to cart
+        # if product is found, add it to cart
         cart[product_id] = {
             'id': product_id,
-            'item': product.name,
+            'name': product.name,
             'quantity': 1,
-            'price': float(product.cost),
-            'sub_total': float(product.cost),
+            'cost': product.cost,
+            'sub_total': product.cost,
+            'cover': product.cover
         }
 
-        # save cart to sessions
-        request.session['shopping_cart'] = cart
-
-        messages.success(request, "Item added to cart.")
-        return redirect('view_shop')
+        # request.session['shopping_cart'] = cart
+        # return redirect('view_shop')
     else:
+        # add qty +1 of product
         cart[product_id]['quantity'] += 1
 
+    # save cart to sessions
     request.session['shopping_cart'] = cart
-    return redirect('view_shop')
+    print(cart)
+    messages.success(request, "Item added to cart.")
+    return redirect(reverse('view_shop'))
+
+
+def view_cart(request):
+    # get existing cart from session storage
+    # key = 'shopping_cart'
+    cart = request.session.get('shopping_cart', {})
+    print(cart)
+    return render(request, 'cart/cart_view.template.html', {
+        'shopping_cart': cart
+    })
