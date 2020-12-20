@@ -45,3 +45,16 @@ def view_cart(request):
     return render(request, 'cart/cart_view.template.html', {
         'shopping_cart': cart
     })
+
+
+def remove_from_cart(request, product_id):
+    cart = request.session.get('shopping_cart', {})
+
+    if product_id in cart:
+        # remove it from the cart
+        del cart[product_id]
+        # save back to the session
+        request.session['shopping_cart'] = cart
+        messages.warning(request, "Item removed from cart")
+
+    return redirect(reverse('view_cart'))
