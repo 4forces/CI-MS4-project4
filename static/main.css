@@ -181,9 +181,36 @@ p>a>i {
     font-size: larger;
 }
 
-h5>a>i.pri-text-color:hover, #cart-checkout>i:hover, #cart-back>i:hover, td>i:hover, td>a>i.pri-text-color:hover {
+h5>a>i.pri-text-color:hover, #cart-checkout>i:hover, #cart-back>i:hover, td>i:hover, td>a>i.pri-text-color:hover, .fa-trash:hover {
     color: #f3bf10;
 }
+
+
+/* Cart page CSS */
+.table, #cart-back {
+    color: #fff;
+}
+
+.table td, .table th {
+    text-align: center;
+}
+
+td > i, .fa-trash {
+    font-size: xx-large!important;
+    color: #676eff;
+}
+
+td>img {
+    width: 120px;
+    background-color: #fff;
+    border-radius:0.25rem;
+}
+
+#cart-checkout {
+    min-width: 145px;
+}
+
+
 
 /* ALL CODE BELOW
  FROM THIS POINT 
@@ -195,45 +222,13 @@ ONWARDS NOT USED
     color:#fff;
 }
 
-
-/* Cart page CSS */
-/* #cart-buttons {
-    display: flex;
-} */
-
-/* #cart-back, #cart-checkout {
-    justify-content: space-around;
-} */
-
-.table {
-    color: #fff;
-}
-
 #forgot-pw:hover {
     text-decoration: underline;
-}
-
-.table td, .table th {
-    text-align: center;
-}
-
-td > i {
-    font-size: xx-large!important;
-    color: #676eff;
-}
-
-td>img {
-    width: 150px;
-    background-color: #fff;
-    border-radius:0.25rem;
-}
-
-#cart-checkout {
-    min-width: 145px;
 }
 
 .bg-colored {
     background-color: rgba(114, 116, 142,0.5);
 }
+
 
 /* register page css */
