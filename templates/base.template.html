@@ -125,6 +125,8 @@
                     toastr.{{ message.tags }}('{{ message }}')
                 {% elif message.tags == 'error' %}
                     toastr.{{ message.tags }}('{{ message }}')
+                {% elif message.tags == 'warning' %}
+                    toastr.{{ message.tags }}('{{ message }}')
                 {% endif %}
             {% endfor %}
         {% endif %}
