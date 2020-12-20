@@ -21,7 +21,7 @@ def add_to_cart(request, product_id):
             'quantity': 1,
             'cost': product.cost,
             'sub_total': product.cost,
-            'cover': product.cover
+            'cover': str(product.cover)
         }
 
         # request.session['shopping_cart'] = cart
