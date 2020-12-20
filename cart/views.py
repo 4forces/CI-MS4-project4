@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.shortcuts import get_object_or_404, redirect
 from django.contrib import messages
 
 from products.models import Product
@@ -16,16 +16,16 @@ def add_to_cart(request, product_id):
         # add to cart
         cart[product_id] = {
             'id': product_id,
-            'item': Product.name,
+            'item': product.name,
             'quantity': 1,
-            'price': float(Product.cost),
-            'sub_total': float(Product.cost),
+            'price': float(product.cost),
+            'sub_total': float(product.cost),
         }
 
         # save cart to sessions
         request.session['shopping_cart'] = cart
 
-        message.success(request, "Item added to cart.")
+        messages.success(request, "Item added to cart.")
         return redirect('view_shop')
     else:
         cart[product_id]['quantity'] += 1
