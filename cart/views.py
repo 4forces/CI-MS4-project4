@@ -58,8 +58,12 @@ def view_cart(request):
     # key = 'shopping_cart'
     cart = request.session.get('shopping_cart', {})
     print(cart)
+    total = 0
+    for entry, item in cart.items():
+        total += item['sub_total']
     return render(request, 'cart/cart_view.template.html', {
-        'shopping_cart': cart
+        'shopping_cart': cart,
+        'total_price': total
     })
 
 
