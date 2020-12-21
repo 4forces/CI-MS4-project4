@@ -19,7 +19,7 @@ def add_to_cart(request, product_id):
             'id': product_id,
             'name': product.name,
             'quantity': 1,
-            'cost': product.cost,
+            'cost': round(product.cost, 2),
             'sub_total': product.cost,
             'cover': str(product.cover)
         }
