@@ -7,7 +7,7 @@ from products.models import Product
 
 
 def add_to_cart(request, product_id):
-    product = get_object_or_404(Product, pk=product_id)
+    # product = get_object_or_404(Product, pk=product_id)
     # get existing cart from session storage
     # key = 'shopping_cart'
     cart = request.session.get('shopping_cart', {})
@@ -20,21 +20,23 @@ def add_to_cart(request, product_id):
             'name': product.name,
             'quantity': 1,
             'cost': round(product.cost, 2),
-            'sub_total': product.cost,
+            'sub_total': round(product.cost, 2),
             'cover': str(product.cover)
         }
-
         # request.session['shopping_cart'] = cart
         # return redirect('view_shop')
+        request.session['shopping_cart'] = cart
+        print(cart)
+        messages.success(request, "Item added to cart.")
+        return redirect(reverse('view_shop'))
+
     else:
         # add qty +1 of product
         cart[product_id]['quantity'] += 1
-
-    # save cart to sessions
-    request.session['shopping_cart'] = cart
-    print(cart)
-    messages.success(request, "Item added to cart.")
-    return redirect(reverse('view_shop'))
+        cart[product_id]['sub_total'] = cart[product_id]['quantity'] * \
+            cart[product_id]['cost']
+        request.session['shopping_cart'] = cart
+        return redirect('/cart/')
 
 
 def view_cart(request):
