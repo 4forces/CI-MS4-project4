@@ -71,6 +71,9 @@
                     <li class="nav-item">
                         <a class="nav-link mx-3" href="{% url 'account_logout' %}">Logout</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-3" href="{% url 'view_cart' %}"><i class="fa fa-shopping-cart"></i> ({{number_of_items}})</a>
+                    </li>
                     {% else %}
                     <li class="nav-item">
                         <a class="nav-link mx-3" href="{% url 'account_login' %}">Login</a>
