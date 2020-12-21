@@ -36,7 +36,7 @@
                             <tr>
                                 <td class="align-middle">{% cloudinary value.cover alt="Product image" %}</td>
                                 <td class="align-middle">{{ value.name }}</td>
-                                <td class="align-middle"><a href="#"><i class="fa fa-minus mr-1 pri-text-color" aria-hidden="true"></i></a> {{value.quantity}} <a href="{% url 'add_to_cart' product_id=value.id %}"><i class="fa fa-plus ml-1 pri-text-color" aria-hidden="true"></i></a></td>
+                                <td class="align-middle"><a href="{% url 'minus_from_cart' product_id=value.id %}"><i class="fa fa-minus mr-1 pri-text-color" aria-hidden="true"></i></a> {{value.quantity}} <a href="{% url 'add_to_cart' product_id=value.id %}"><i class="fa fa-plus ml-1 pri-text-color" aria-hidden="true"></i></a></td>
                                 <td class="align-middle">${{ value.cost }}</td>
                                 <td class="align-middle">${{ value.sub_total }}</td>
                                 <td class="align-middle"><a href="{% url 'remove_from_cart' product_id=value.id %}"><i class="fa fa-trash"></i></a></td>

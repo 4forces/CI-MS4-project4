@@ -36,7 +36,21 @@ def add_to_cart(request, product_id):
         cart[product_id]['sub_total'] = cart[product_id]['quantity'] * \
             cart[product_id]['cost']
         request.session['shopping_cart'] = cart
-        return redirect('/cart/')
+        return redirect('view_cart')
+
+
+def minus_from_cart(request, product_id):
+    # product = get_object_or_404(Product, pk=product_id)
+    # get existing cart from session storage
+    # key = 'shopping_cart'
+    cart = request.session.get('shopping_cart', {})
+    if product_id in cart:
+        if cart[product_id]['quantity'] > 1:
+            cart[product_id]['quantity'] -= 1
+            cart[product_id]['sub_total'] = cart[product_id]['quantity'] * \
+                cart[product_id]['cost']
+            request.session['shopping_cart'] = cart
+    return redirect('view_cart')
 
 
 def view_cart(request):
