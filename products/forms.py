@@ -13,6 +13,7 @@ class SearchForm(forms.Form):
 class ProductForm(forms.ModelForm):
     cover = CloudinaryJsFileField()
     # 'meta' defines which model ('product') this form references
+
     class Meta:
         model = Product
         fields = ('name', 'cost', 'unit', 'quantity',
