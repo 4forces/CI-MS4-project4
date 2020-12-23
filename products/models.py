@@ -12,7 +12,7 @@ class Product(models.Model):
     category = models.ForeignKey('Category',
                                  on_delete=models.CASCADE, default=1)
     part_number = models.CharField(blank=False, max_length=15)
-    desc = models.TextField(blank=False)
+    description = models.TextField(blank=False)
     buyer = models.ForeignKey(User,
                               on_delete=models.CASCADE, default=1)
     supplier = models.ForeignKey('Supplier',
