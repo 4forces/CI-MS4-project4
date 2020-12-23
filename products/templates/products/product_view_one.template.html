@@ -31,6 +31,13 @@
                                 <p class="card-text">Category: {{product.category}}</p>
                                 <p class="card-text">Part Number: {{product.part_number}}</p>
                                 <p class="card-text">Ships from: Singapore</p>
+                                <!-- <h5 class="card-text">
+                                    {% for key, value in shopping_cart.items %}
+                                    <a href="{% url 'minus_from_cart1' product_id=value.id %}"><i class="fa fa-minus-square mr-2 pri-text-color" aria-hidden="true"></i></a>
+                                    <b> {{value.quantity}} </b> 
+                                    <a href="{% url 'add_to_cart1' product_id=value.id %}"><i class="fa fa-plus-square ml-2 pri-text-color" aria-hidden="true"></i></a>
+                                    {% endfor %}
+                                </h5> -->
                                 <a href="{% url 'add_to_cart' product_id=product.id %}" class="btn btn-primary mt-3"><i class="fa fa-plus-circle"></i> Add to Cart</a>
                             </div>
                         </div>
