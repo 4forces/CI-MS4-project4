@@ -6,7 +6,7 @@ from cloudinary.models import CloudinaryField
 # Create your models here.
 class Product(models.Model):
     name = models.CharField(blank=False, max_length=150)
-    cost = models.FloatField(blank=False)
+    cost = models.DecimalField(blank=False, max_digits=10, decimal_places=3)
     unit = models.CharField(blank=False, max_length=10)
     quantity = models.IntegerField(blank=False, default=0)
     category = models.ForeignKey('Category',
