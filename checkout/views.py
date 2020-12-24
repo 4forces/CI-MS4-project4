@@ -4,6 +4,7 @@ from django.shortcuts import render, reverse, HttpResponse, \
 # import 'settings' and 'stripe' to access stripe key
 from django.conf import settings
 import stripe
+import json
 
 from products.models import Product
 from django.contrib.sites.models import Site
@@ -36,7 +37,10 @@ def checkout(request):
         }
 
         line_items.append(item)
-        all_product_ids.append(str(product_model.id))
+        all_product_ids.append({
+            'product_id': product_model.id,
+            'qty': product['quantity']
+        })
 
     # assign current website to variable
     current_site = Site.objects.get_current()
@@ -51,7 +55,7 @@ def checkout(request):
         client_reference_id=request.user.id,
         # metadata can only be str type
         metadata={
-            'all_product_ids': ",".join(all_product_ids)
+            'all_product_ids': json.dumps(all_product_ids)
         },
         mode="payment",
         success_url=domain + reverse('checkout_success'),
@@ -70,6 +74,7 @@ def checkout_success(request):
 
 def checkout_cancelled(request):
     return HttpResponse('Checkout cancelled.')
+
 
 # From Stripe documentation
 @csrf_exempt
