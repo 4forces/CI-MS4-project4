@@ -7,6 +7,7 @@ import stripe
 
 from products.models import Product
 from django.contrib.sites.models import Site
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 
@@ -68,3 +69,9 @@ def checkout_success(request):
 
 def checkout_cancelled(request):
     return HttpResponse('Checkout cancelled.')
+
+
+@csrf_exempt
+def payment_completed(request):
+    print(request.body)
+    return HttpResponse(status=200)

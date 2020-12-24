@@ -7,4 +7,5 @@ urlpatterns = [
          name='checkout_success'),
     path('cancelled', checkout.views.checkout_cancelled,
          name='checkout_cancelled'),
+    path('payment_completed', checkout.views.payment_completed),
 ]
