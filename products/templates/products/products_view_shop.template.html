@@ -2,6 +2,8 @@
 {% load static %}
 {% load crispy_forms_tags %}
 {% load cloudinary %}
+{% load mathfilters %}
+
 
 {% block page_id %}view-shop-page{% endblock %}
 
@@ -29,7 +31,7 @@
                     <a href="{% url 'view_single_product' product_id=p.id %}">{% cloudinary p.cover class="card-img-top" alt="Product Image" %}</a>
                     <div class="card-body justify-content-center text-center">
                         <h6 class="card-title">{{p.name}}</h6>
-                        <p class="card-text pri-text-color pri-text-size"> ${{p.cost}}</p>
+                        <p class="card-text pri-text-color pri-text-size"> ${{p.cost|div:100|floatformat:2}}</p>
                         <p class="card-text ter-text-color2">Category: {{p.category}}</p>
                         <a href="{% url 'add_to_cart' product_id=p.id %}" class="btn btn-primary"><i class="fa fa-plus-circle"></i> Add to Cart</a>                
                     </div>

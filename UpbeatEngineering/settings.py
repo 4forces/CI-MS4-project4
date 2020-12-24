@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'crispy_forms',
     'cloudinary',
+    'mathfilters',
 
     # allauth apps
     'django.contrib.sites',

@@ -1,6 +1,7 @@
 {% extends "base.template.html" %}
 {% load static %}
 {% load cloudinary %}
+{% load mathfilters %}
 
 {% block page_id %}view-product-page{% endblock %}
 
@@ -26,18 +27,11 @@
                         </div>
                         <div class="col-md-6">
                             <div class="card-body">
-                                <h4 class="card-text pri-text-color pri-text-size mb-3">Price: $ {{product.cost}}</h4>
+                                <h4 class="card-text pri-text-color pri-text-size mb-3">Price: $ {{product.cost|div:100|floatformat:2}}</h4>
                                 <p class="card-text">In stock: {{product.quantity}} {{product.unit}}</p>
                                 <p class="card-text">Category: {{product.category}}</p>
                                 <p class="card-text">Part Number: {{product.part_number}}</p>
                                 <p class="card-text">Ships from: Singapore</p>
-                                <!-- <h5 class="card-text">
-                                    {% for key, value in shopping_cart.items %}
-                                    <a href="{% url 'minus_from_cart1' product_id=value.id %}"><i class="fa fa-minus-square mr-2 pri-text-color" aria-hidden="true"></i></a>
-                                    <b> {{value.quantity}} </b> 
-                                    <a href="{% url 'add_to_cart1' product_id=value.id %}"><i class="fa fa-plus-square ml-2 pri-text-color" aria-hidden="true"></i></a>
-                                    {% endfor %}
-                                </h5> -->
                                 <a href="{% url 'add_to_cart' product_id=product.id %}" class="btn btn-primary mt-3"><i class="fa fa-plus-circle"></i> Add to Cart</a>
                             </div>
                         </div>
@@ -45,7 +39,7 @@
                     <div class="row text-center">
                         <div class="col px-4 m-3">
                             <h6>Product Description</h6>
-                            <p>{{product.desc}}</p>
+                            <p>{{product.description}}</p>
                         </div>
                     </div>
                 </div>        
