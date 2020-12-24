@@ -19,8 +19,8 @@ def add_to_cart(request, product_id):
             'id': product_id,
             'name': product.name,
             'quantity': 1,
-            'cost': round(product.cost, 2),
-            'sub_total': round(product.cost, 2),
+            'cost': product.cost,
+            'sub_total': product.cost,
             'cover': str(product.cover)
         }
         # request.session['shopping_cart'] = cart
@@ -65,6 +65,8 @@ def view_cart(request):
         'shopping_cart': cart,
         'total_price': total
     })
+    print(type(total))
+    print(total)
 
 
 def remove_from_cart(request, product_id):
