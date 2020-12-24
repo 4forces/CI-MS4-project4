@@ -7,8 +7,11 @@ import stripe
 import json
 
 from products.models import Product
+from .models import Purchase
+
 from django.contrib.sites.models import Site
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -107,4 +110,20 @@ def payment_completed(request):
 
 
 def handle_payment(session):
-    print(session)
+    metadata = session['metadata']
+    user = get_object_or_404(User, pk=session['client_reference_id'])
+    # covert json 'metadata' to python list nested dictionary object
+    all_product_ids = json.loads(metadata['all_product_ids'])
+
+    for order_item in all_product_ids:
+        product_model = get_object_or_404(Product, pk=order_item['product_id'])
+
+        # create 'purchase' model manually
+        purchase = Purchase()
+        purchase.product_id = product_model
+        purchase.user_id = user
+        purchase.qty = order_item['qty']
+        purchase.price = product_model.cost
+
+        # save the created purchase model
+        purchase.save()
