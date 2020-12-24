@@ -49,6 +49,7 @@ def checkout(request):
         payment_method_types=['card'],
         line_items=line_items,
         client_reference_id=request.user.id,
+        # metadata can only be str type
         metadata={
             'all_product_ids': ",".join(all_product_ids)
         },
@@ -70,8 +71,35 @@ def checkout_success(request):
 def checkout_cancelled(request):
     return HttpResponse('Checkout cancelled.')
 
-
+# From Stripe documentation
 @csrf_exempt
 def payment_completed(request):
-    print(request.body)
+    # Verifying data is sent by Stripe
+    endpoint_secret = settings.ENDPOINT_SECRET
+    payload = request.body
+    # Retrieve Stripe Signature
+    sig_header = request.META['HTTP_STRIPE_SIGNATURE']
+
+    try:
+        event = stripe.Webhook.construct_event(
+            payload, sig_header, endpoint_secret
+        )
+    except ValueError as e:
+        # Invalid payload
+        print("Invalid payload")
+        return HttpResponse(status=400)
+    except stripe.error.SignatureVerificationError as e:
+        # Signature is invalid
+        print("Invalid signature")
+        return HttpResponse(status=400)
+
+    # Processing the order
+    if event['type'] == 'checkout.session.completed':
+        session = event['data']['object']
+        handle_payment(session)
+
     return HttpResponse(status=200)
+
+
+def handle_payment(session):
+    print(session)
