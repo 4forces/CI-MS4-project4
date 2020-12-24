@@ -65,8 +65,6 @@ def view_cart(request):
         'shopping_cart': cart,
         'total_price': total
     })
-    print(type(total))
-    print(total)
 
 
 def remove_from_cart(request, product_id):
