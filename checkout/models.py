@@ -14,5 +14,8 @@ class Purchase(models.Model):
     qty = models.IntegerField(blank=False)
 
     def __str__(self):
-        return "Purchase for product "
-        f"#{self.product.id} by user#{self.user.id}"
+        title = (
+            f"Purchase for product "
+            f"#{self.product_id.id} by user#{self.user_id.id}"
+        )
+        return title
