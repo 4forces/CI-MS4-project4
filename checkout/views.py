@@ -57,7 +57,7 @@ def checkout(request):
     )
 
     return render(request, "checkout/checkout.template.html", {
-        'session_id': session,
+        'session_id': session.id,
         'public_key': settings.STRIPE_PUBLISHABLE_KEY
     })
 
