@@ -65,9 +65,11 @@
                         <a class="nav-link mx-3" href="{% url 'view_shop' %}">Shop<span class="sr-only">(current)</span></a>
                     </li>
                     {% if user.is_authenticated %}
+                    {% if user.is_superuser %}
                     <li class="nav-item">
-                        <a class="nav-link mx-3" href="{% url 'create_product' %}">Create Product</a>
+                        <a class="nav-link mx-3" href="{% url 'create_product' %}">Add Product</a>
                     </li>
+                    {% endif %}
                     <li class="nav-item">
                         <a class="nav-link mx-3" href="{% url 'account_logout' %}">Logout</a>
                     </li>
