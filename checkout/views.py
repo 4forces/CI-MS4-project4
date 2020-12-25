@@ -1,4 +1,4 @@
-from django.shortcuts import render, reverse, HttpResponse, \
+from django.shortcuts import render, redirect, reverse, HttpResponse, \
     get_object_or_404
 
 # import 'settings' and 'stripe' to access stripe key
@@ -72,7 +72,8 @@ def checkout(request):
 
 
 def checkout_success(request):
-    return HttpResponse('Payment completed successfully.')
+    request.session['shopping_cart'] = {}
+    return redirect(reverse("home"))
 
 
 def checkout_cancelled(request):
