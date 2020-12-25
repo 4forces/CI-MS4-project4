@@ -3,14 +3,34 @@ from django.contrib.auth.decorators import login_required
 from .models import Product
 from .forms import SearchForm, ProductForm, CategoryForm, SupplierForm
 from django.contrib import messages
+from django.db.models import Q
 
 
 # Create your views here.
 # 'READ' functions
 def view_shop(request):
     # return HttpResponse("Welcome to Products App")
+    # create queryset
     products = Product.objects.all()
+
+    print(products.query)
+
+    # creating a query object that is always true
+    if request.GET:
+        queries = ~Q(pk__in=[])
+
+        if 'name' in request.GET and request.GET['name']:
+            name = request.GET['name']
+            queries = queries & Q(name__icontains=name)
+
+        if 'category' in request.GET and request.GET['category']:
+            category = request.GET['category']
+            queries = queries & Q(category__in=category)
+
+        products = products.filter(queries)
+
     search_form = SearchForm(request.GET)
+
     return render(request, 'products/products_view_shop.template.html', {
         'products': products,
         'search_form': search_form
