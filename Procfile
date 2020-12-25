@@ -1,0 +1,1 @@
+web: gunicorn UpbeatEngineering.wsgi:application
