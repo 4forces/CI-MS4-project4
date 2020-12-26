@@ -22,17 +22,18 @@
                 <form method="POST" enctype="multipart/form-data">
                     {%csrf_token%}
                     {{form|crispy}}
+                    <div class="status">
+                        <span class="status_value"></span>
+                    </div>
+                    <div class="uploaded_info_holder">        
+                    </div>
                     <div class="text-center">
                         <input class="btn btn-primary" type="submit"/>
                     </div>
                 </form>
-            <hr class="dividers">
-                <div class="status">
-                    <p>File Upload Status: <span class="status_value">Idle</span></p>
-                </div>
+            <!-- <hr class="dividers"> -->
+                
 
-                <div class="uploaded_info_holder">        
-                </div>
             </div>
         </div>
         <!-- end of form container -->
@@ -63,14 +64,14 @@
         .cloudinary_fileupload({
             dropZone: '#form',
             start: function () {
-                $('.status_value').text('Starting direct upload...');
+                $('.status_value').text('Starting upload...');
             },
             progress: function () {
                 $('.status_value').text('Uploading...');
             },
         })
         .on('cloudinarydone', function (e, data) {
-            $('.status_value').text('Updating backend... done');
+            $('.status_value').text('Done!');
         var info = $('<div class="uploaded_info"/>');
         // $(info).append($('<div class="data"/>').append(
         //     prettydump(data.result)
@@ -78,8 +79,8 @@
         $(info).append($('<div class="image"/>').append(
             $.cloudinary.image(data.result.public_id, {
                 format: data.result.format,
-                width: 300,
-                height: 300, 
+                width: 200,
+                height: 200, 
                 crop: "fit"
             })
         ));
