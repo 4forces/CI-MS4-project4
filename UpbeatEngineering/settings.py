@@ -131,7 +131,8 @@ LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 
 TEST_EMAIL = os.environ.get('TEST_EMAIL')
-if TEST_EMAIL=="1":
+# when working in gitpod, change 'export TEST_EMAIL = 0' at .env
+if TEST_EMAIL == "1":
     # For verification email link to display in console (for debugging)
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 else:
