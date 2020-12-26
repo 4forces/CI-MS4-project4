@@ -96,7 +96,7 @@ TEMPLATES = [
     },
 ]
 
-# Start of allauth settings
+# / START OF ALLAUTH SETTINGS
 
 AUTHENTICATION_BACKENDS = [
     # Needed to login by username in Django admin, regardless of `allauth`
@@ -108,23 +108,50 @@ AUTHENTICATION_BACKENDS = [
 
 SITE_ID = 1
 
+# user has to login with username and email
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
-ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
-ACCOUNT_USERNAME_MIN_LENGTH = 4
-LOGIN_URL = '/accounts/login/'
-# Changed '/success' to '/'  redirects to store homepage
-LOGIN_REDIRECT_URL = '/'
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-#  End of allauth settings
+# new users must provide an email address
+ACCOUNT_EMAIL_REQUIRED = True
+
+# sends email to users email for compulsory account verification
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+
+# prompts user to enter email twice
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
+
+# username must have min 4 characters
+ACCOUNT_USERNAME_MIN_LENGTH = 4
+
+# login page url path
+LOGIN_URL = '/accounts/login/'
+
+# page displayed after login
+# Changed from '/success' to '/' -> To direct to store homepage
+LOGIN_REDIRECT_URL = '/'
+
+TEST_EMAIL = os.environ.get('TEST_EMAIL')
+if TEST_EMAIL=="1":
+    # For verification email link to display in console (for debugging)
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+else:
+    # For sending out actual emails
+    EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+    EMAIL_USE_TLS = True
+    EMAIL_PORT = 587
+    EMAIL_HOST = "smtp.gmail.com"
+    EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASS")
+    EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
+
+#  END OF ALLAUTH SETTINGS /
+
 
 WSGI_APPLICATION = 'UpbeatEngineering.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# # Original SQLite3 local production Database
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
