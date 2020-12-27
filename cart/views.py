@@ -1,4 +1,5 @@
 from django.shortcuts import get_object_or_404, redirect, render, reverse
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
 from products.models import Product
@@ -6,6 +7,7 @@ from products.models import Product
 # Create your views here.
 
 
+@login_required
 def add_to_cart(request, product_id):
     # product = get_object_or_404(Product, pk=product_id)
     # get existing cart from session storage
@@ -39,6 +41,7 @@ def add_to_cart(request, product_id):
         return redirect('view_cart')
 
 
+@login_required
 def minus_from_cart(request, product_id):
     # product = get_object_or_404(Product, pk=product_id)
     # get existing cart from session storage
@@ -53,6 +56,7 @@ def minus_from_cart(request, product_id):
     return redirect('view_cart')
 
 
+@login_required
 def view_cart(request):
     # get existing cart from session storage
     # key = 'shopping_cart'
@@ -67,6 +71,7 @@ def view_cart(request):
     })
 
 
+@login_required
 def remove_from_cart(request, product_id):
     cart = request.session.get('shopping_cart', {})
 
