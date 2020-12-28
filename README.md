@@ -311,14 +311,14 @@ Django messages was used in conjunction with [Toastr](https://github.com/CodeSev
 
 13.  [toastr](https://github.com/CodeSeven/toastr) for flash messages
 
-14.  [ERDplus](https://erdplus.com/) to draw ER Diagrams and Relationship Schema
-
-15.  [Balsamiq](https://balsamiq.com/wireframes/desktop/) for wireframes
+14.  [Balsamiq](https://balsamiq.com/wireframes/desktop/) for wireframes
  
 ---
  
 
 ## Testing
+
+The site was passed through [Nu Html Checker](https://validator.w3.org/nu/), [W3C CSS Validation](https://jigsaw.w3.org/css-validator/) with some minor errors. The site was also viewd on Google Chrome, Firefox and Safari. 
 
 Manual testing was done on all links and Pages.
 
@@ -388,7 +388,7 @@ No. | Test Case | Expected Result(s) | Results
 1 | Click on the "Login" button on the Navbar | User will be brought to the *Sign In* page | Pass
 2 | Type in the login and password for "Admin" as above, and click "Sign In" | User will be brought back to the *Landing Page* | Pass
 3 | Click on "Add Product" button on the Navbar | User will be brought to the *Add Product* page | Pass
-4 | Populate the form with suggested test values as listed above | User will see *Cover* field disappears, and the messages "Starting Upload...", "Uploading..." and "Done!", and a thumbnail of the uploaded image appears. | Pass
+4 | Populate the form with suggested test values as listed above. Note that the unit for "Cost" is cents, not dollars. | User will see *Cover* field disappears, and the messages "Starting Upload...", "Uploading..." and "Done!", and a thumbnail of the uploaded image appears. | Pass
 5 | Click on "Submit" button | Message "Product \<product name\> created" shown, user redirected back to *Add Product* form page | Pass
 6 | Click on the "Shop" link on the navbar | User will be brought to the *Product List* page | Pass
 7 | Click on the "Update" button in the product card | User will be brought to the *Update Product* form page | Pass
@@ -410,6 +410,7 @@ No. | Test Case | Expected Result(s) | Results
     - The update step has to be done 2 times for the product to be successfully updated. On the first submission, the page refreshes itself with all the form fields retained except for the cover image. The Admin is required to repeat the image upload again before clicking on "Submit", only then the update form is successfully submitted and executed. 
 4. Hovering over the Navbar links causes the Navbar to "vibrate". This is due to the `border-bottom: 3px` CSS for the Navbar links. An alternative text-decoration that does not affect the Navbar size needs to be explored. 
 5. `backdrop-filter` is used for the Navbar and various elements in this project. This CSS property is [not fully supported by all browsers](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter). Firefox does not support this feature by default, some settings have to be chanded. The steps for doing so can be found [here](https://dev.to/codingsprint/how-to-enable-backdrop-filter-in-firefox-2n8e). 
+6. In the product models, 'buyer' is wrongly termed. It should be 'user' Instead.
 
 ---
 
@@ -610,6 +611,8 @@ git push heroku master
 - Toggler to hide and show README contents from (auxfuse)[https://github.com/auxfuse/Milestone4/blob/master/README.md], courteousy of CI alumni Anthony O' Brien
 
 - [Adobe Color](https://color.adobe.com/create/color-wheel) to generate the color palette
+
+- [Microsoft Powerpoint](https://office.live.com/start/powerpoint.aspx) to draw the ER Diagram
 
 ### Deployment to Heroku
 
