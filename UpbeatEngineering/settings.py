@@ -29,9 +29,9 @@ SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["*", "ci-ms4-upbeatengineering.herokuapp.com"]
+ALLOWED_HOSTS = ["ci-ms4-upbeatengineering.herokuapp.com"]
 
 
 # Application definition
