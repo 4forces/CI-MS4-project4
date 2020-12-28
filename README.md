@@ -71,7 +71,7 @@ As the shop owner:
 <summary>ER Diagram</summary>
 
 <p align="center">
-    <img height="350" src="https://github.com/4forces/CI-MS4-project4/tree/master/static/images/readme/erd.png" alt="ER Diagram">
+    <img src="static/images/readme/erd.png" width="800" style="margin:0">
 </p>
 
 </details>
