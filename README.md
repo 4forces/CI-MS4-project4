@@ -84,13 +84,13 @@ The frontend individual webpages was done first before integration into Django b
 
 This site has 7 main features:
 
--  [Landing page](#)
--  [Products List](#)
--  [View Product](#)
--  [Shopping Cart](#)
--  [Add Product*](#)
--  [Update Product*](#)
--  [Delete Product*](#)
+-  [Landing page](#landing-page)
+-  [Products List](#products-list-page)
+-  [View Product](#view-product-page)
+-  [Shopping Cart](#shopping-cart-and-checkout)
+-  [Add Product*](#add-product-admin-only)
+-  [Update Product*](#update-product-admin-only)
+-  [Delete Product*](#delete-product-admin-only)
 
 **Admin only*
 
@@ -582,8 +582,7 @@ git push heroku master
 
 - Product images from [Amazon](https://www.amazon.com), [Banggood](https://www.banggood.com/), [Lazada](https://www.lazada.sg/), [Cytron](https://sg.cytron.io/) and [AliExpress](https://www.aliexpress.com/)
 
-- [Am I Responsive](http://ami.responsivedesign.is/#)
-  
+ 
 ### Site Theme and Appearance
 
 -  [Hackaday](https://hackaday.com/blog/)
