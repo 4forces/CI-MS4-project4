@@ -1,6 +1,6 @@
 # Upbeat Engineering - Searching for electronic engineering components? Look no further.
 
-<img  src="static/img/readme/title-pic.png"  width="800"  style="margin:0">
+<img src="static/images/readme/title.png" width="800" style="margin:0">
 
 
 ## Overview
@@ -32,6 +32,7 @@ This website was conceptualized in discussion with a family member of the develo
 The look of was based off this [site](https://hackaday.com/blog/), which is the family member indicated his preference. Based on this site's look, inspiration was sourced from [Pinterest](https://www.pinterest.com/), with the eventual decision to reference and adopt the theme of this [page](https://www.behance.net/gallery/62918019/GamingGear-E-commerce-Website).
 
 The colour palette used is as follows:
+
 <img src="static/images/readme/color-swatch.png" width="800" style="margin:0">
 
 Similar to the [reference site](https://www.behance.net/gallery/62918019/GamingGear-E-commerce-Website) mentioned above, the fonts of Gotham and [Cabin](https://fonts.google.com/specimen/Cabin) were adopted for this site. However, since Gotham is a paid font, [Raleway](https://fonts.google.com/specimen/Raleway) is used as a replacement, as listed on [this site](https://fontsplugin.com/google-fonts-gotham/).
@@ -61,13 +62,13 @@ As the shop owner:
 <summary>Wireframe</summary>
 
 <p align="center">
-    <img height="500" src="https://github.com/4forces/CI-MS4-project4/tree/master/static/images/readme/wireframe.png" alt="Wireframe">
+    <img src="static/images/readme/wireframe.png" width="800" style="margin:0">
 </p>
 
 </details>
 
 <details>
-<summary>ER Diagrams</summary>
+<summary>ER Diagram</summary>
 
 <p align="center">
     <img height="350" src="https://github.com/4forces/CI-MS4-project4/tree/master/static/images/readme/erd.png" alt="ER Diagram">
@@ -466,13 +467,13 @@ heroku  https://git.heroku.com/<APP-NAME>.git (push)
    2. Click on your app in the dashboard.
    3. Click on Settings
    4. Click on Reval Config Vars
-   5. From the local `.env` file, copy each of the key and value carefully over to Config Vars (example below). Ensure that there is no extra whitespace ore newlines at the end of each config variable. 
+   5. From the local `.env` file, copy each of the key and value carefully over to Config Vars (screenshot below). Ensure that there is no extra whitespace ore newlines at the end of each config variable. 
 
 <details>
-<summary>Heroku Config Variables Example</summary>
+<summary>Heroku Config Vars Screenshot</summary>
 
 <p align="center">
-    <img height="500" src="https://github.com/4forces/CI-MS4-project4/tree/master/static/images/readme/heroku-config-vars.png" alt="Heroku Config Vars screenshot">
+    <img src="static/images/readme/heroku-config-vars.png" width="500" style="margin:0">
 </p>
 
 </details>
@@ -606,18 +607,18 @@ git push heroku master
 
 ### Readme
 
-- Toggler to hide and show README contents from [https://github.com/auxfuse/Milestone4/blob/master/README.md], courteousy of CI alumni Anthony O' Brien (auxfuse)
+- Toggler to hide and show README contents from (auxfuse)[https://github.com/auxfuse/Milestone4/blob/master/README.md], courteousy of CI alumni Anthony O' Brien
 
 - [Adobe Color](https://color.adobe.com/create/color-wheel) to generate the color palette
 
 ### Deployment to Heroku
 
 - Lecturer [Mr. KX Chor's](https://github.com/kunxin-chor) for his (100+ page) labsheet and guidance
-- CI Webinar [Less Stress, More Success: How to Deploy Effecti](https://us02web.zoom.us/rec/play/V4tr7eTDMqJcIObFDEhRKCfcQ7nOobefV8Rac6DOv-dJyOAYUNbQl9V3vnH9Okk9S4jwwWujBioo1ygA.7eNvlTGH-lGzy5iF?autoplay=true) by tutors, Samantha and Michael, and alumni Malia.
+- CI Webinar [Less Stress, More Success: How to Deploy Effectively](https://us02web.zoom.us/rec/play/V4tr7eTDMqJcIObFDEhRKCfcQ7nOobefV8Rac6DOv-dJyOAYUNbQl9V3vnH9Okk9S4jwwWujBioo1ygA.7eNvlTGH-lGzy5iF?autoplay=true) by tutors Samantha and Michael, and alumni Malia.
 
-### Others
+### All Others
 
-- All the reference links to articles for resolving various issues as listed in the Features section of this README
+- All the reference links in the Features section of this README, leading to articles for resolving various issues
 
 ---
 
@@ -627,7 +628,7 @@ For one with zero coding experience, this course has been a tough, gruelling but
 
 > "Change it, play with it, see what the result is. You can't break anything, and you might learn something along the way" - Code Institute Senior Developer Matt Rudge (Waaay back in the course introduction videos)
 
-Indeed, going through this course has definitely impacted my perspective of life for the better. I can say with confidence that I have came out a much better person compared to the start of the course. 
+Indeed, going through this course has definitely impacted my perspective of life for the positive outlook. I can say with confidence that I have came out a much better person compared to the start of the course. 
 
 Coming to the end of final milestone project for this course, there are many to acknowledge, and I will just name a few key ones here:
 
@@ -635,7 +636,7 @@ Coming to the end of final milestone project for this course, there are many to 
 
 - Lecturer Mr. Paul Chor (for his 100+ page MSP4 labsheet and) for sharing his generous knowledge, and 'tough love' programmer's mindset with us
 
-- The CI Assessment team for the comprehensive feedback, valuable suggestions and thoughtful comments for improvement from the past three MSPs. These have been super helpful in my journey as an aspiring software developer. (And thank you also for reading all the way to this point for this super long final readme!)
+- The CI Assessment team for the comprehensive feedback, valuable suggestions and thoughtful comments for improvement from the past three MSPs. These have been super helpful in my journey as an aspiring software developer. (Thank you for reading all the way to this point for this super long final readme!)
 
 - Teaching Assistant John Yan for the great overview and tips of being a good coder 
 
