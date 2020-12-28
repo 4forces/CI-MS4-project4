@@ -82,6 +82,10 @@ h1,h2,h3,h4,h5,h6,.nav-link {
     box-shadow: inset 0 0 0 1000px rgba(35,35,47, 0.3);
 }
 
+#navbar-burger:focus {
+    background-color: #f3bf10!important;
+}
+
 .bordered {
     border: 3px solid #72748e;
     border-radius: 1rem;
