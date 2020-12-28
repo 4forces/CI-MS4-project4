@@ -10,58 +10,45 @@ body {
 
 #home-page {
     background: linear-gradient(to bottom, rgba(35,35,47, 0.85) 0%, rgba(35,35,47, 0.85) 100%), url("../images/vector12.jpg");
-    /* background-position: center; */
-    /* background-repeat: no-repeat; */
     background-size: cover;
     background-attachment: fixed;
-    /* height: 100vh; */
 }
-
 
 #view-shop-page, #view-product-page {
     background: linear-gradient(to bottom, rgba(35,35,47, 0.80) 0%, rgba(35,35,47, 0.80) 100%), url("../images/vector14.jpg");
     background-position: center;
-    /* background-repeat: no-repeat; */
     background-size: cover;
     background-attachment: fixed;
-    /* height: 100vh; */
 }
-
 
 #view-cart-page {
     background: linear-gradient(to bottom, rgba(35,35,47, 0.80) 0%, rgba(35,35,47, 0.80) 100%), url("../images/vector11.jpg");
     background-position: left;
-    /* background-repeat: no-repeat; */
     background-size: cover;
     background-attachment: fixed;
-    /* height: 100vh; */
 }
-
 
 #login-page, #register-page, #logout-page {
     background: linear-gradient(to bottom, rgba(35,35,47, 0.80) 0%, rgba(35,35,47, 0.80) 100%), url("../images/vector13.jpg");
     background-position: center;
-    /* background-repeat: no-repeat; */
     background-size: cover;
     background-attachment: fixed;
     height: 100vh;
 }
-
 
 #create-product-page, #edit-product-page {
     background: linear-gradient(to bottom, rgba(35,35,47, 0.80) 0%, rgba(35,35,47, 0.80) 100%), url("../images/vector6.jpg");
     background-position: 33% 50%;
-    /* background-repeat: no-repeat; */
     background-size: cover;
     background-attachment: fixed;
     height: 100vh;
 }
-
 
 h1,h2,h3,h4,h5,h6,.nav-link {
     font-family: 'Cabin', sans-serif;
 }
 
+/* Navbar CSS */
 .nav-link {
     color:#ffffff!important;
     font-size: larger;
@@ -69,8 +56,6 @@ h1,h2,h3,h4,h5,h6,.nav-link {
 
 .nav-link:hover {
     border-bottom: 3px solid #f3bf10;
-    /* text-decoration-color: #676eff;
-    text-decoration-thickness: 3px; */
 }
 
 .navbar-inner {
@@ -86,13 +71,7 @@ h1,h2,h3,h4,h5,h6,.nav-link {
     background-color: #f3bf10!important;
 }
 
-.bordered {
-    border: 3px solid #72748e;
-    border-radius: 1rem;
-    backdrop-filter: blur(5px);
-    box-shadow: inset 0 0 0 2000px rgba(255,255,255,0.05);
-}
-
+/* Buttons CSS */
 .btn-outline-primary, .btn-primary {
     color: #fff;
     background-color: #676eff;
@@ -104,6 +83,7 @@ h1,h2,h3,h4,h5,h6,.nav-link {
     border-color: #f3bf10;
 }
 
+/* Font and backgrounds CSS */
 .bg-primary {
     background-color: #676eff!important;
 }
@@ -129,6 +109,12 @@ h1,h2,h3,h4,h5,h6,.nav-link {
     text-decoration: none;
 }
 
+.bordered {
+    border: 3px solid #72748e;
+    border-radius: 1rem;
+    backdrop-filter: blur(5px);
+    box-shadow: inset 0 0 0 2000px rgba(255,255,255,0.05);
+}
 
 /* carousel css */
 .carousel-caption {
@@ -138,12 +124,10 @@ h1,h2,h3,h4,h5,h6,.nav-link {
     bottom: initial;
 }
 
-
 /* common card css */
 .card-view-item, .card-custom {
         background-color: rgba(245,245,245,0);
 }
-
 
 /* Create-Product Form Divider CSS */
 .dividers {
@@ -152,35 +136,7 @@ h1,h2,h3,h4,h5,h6,.nav-link {
     background-color: #72748e;
 }
 
-/* card css */
-/* .card-custom {
-    width:200px;
-    /* opacity: 0;
-} */
-
-/* .card-img-size {
-    width:75%;
-} */
-
-/* i.pri-text-color:hover {
-    color: #f3bf10;
-} */
-
-/* a.card-button {
-    color: #fff; 
-    background-color: #676eff;
-    border-color: #676eff;
-} */
-
-/* a.card-button:hover {
-    color: #f3bf10;
-    text-decoration: none;
-    background-color: #f3bf10;
-    border-color: #f3bf10;
-} */
-
-
-/* View Item CSS */
+/* View Product CSS */
 p>a>i {
     font-size: larger;
 }
@@ -189,11 +145,11 @@ h5>a>i.pri-text-color:hover, #cart-checkout>i:hover, #cart-back:hover, td>i:hove
     color: #f3bf10;
 }
 
+/* Cart page CSS */
 #cart-back:hover {
     text-decoration: none;
 }
 
-/* Cart page CSS */
 .table, #cart-back {
     color: #fff;
 }
@@ -217,25 +173,6 @@ td>img {
     min-width: 145px;
 }
 
-
-
-/* ALL CODE BELOW
- FROM THIS POINT 
-ONWARDS NOT USED
- DUE TO CRISPY FORMS */
-
-/* login CSS */
-#forgot-pw {
-    color:#fff;
-}
-
-#forgot-pw:hover {
-    text-decoration: underline;
-}
-
 .bg-colored {
     background-color: rgba(114, 116, 142,0.5);
 }
-
-
-/* register page css */

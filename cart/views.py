@@ -9,9 +9,6 @@ from products.models import Product
 
 @login_required
 def add_to_cart(request, product_id):
-    # product = get_object_or_404(Product, pk=product_id)
-    # get existing cart from session storage
-    # key = 'shopping_cart'
     cart = request.session.get('shopping_cart', {})
 
     if product_id not in cart:
@@ -25,8 +22,6 @@ def add_to_cart(request, product_id):
             'sub_total': product.cost,
             'cover': str(product.cover)
         }
-        # request.session['shopping_cart'] = cart
-        # return redirect('view_shop')
         request.session['shopping_cart'] = cart
         print(cart)
         messages.success(request, "Item added to cart.")
@@ -43,7 +38,6 @@ def add_to_cart(request, product_id):
 
 @login_required
 def minus_from_cart(request, product_id):
-    # product = get_object_or_404(Product, pk=product_id)
     # get existing cart from session storage
     # key = 'shopping_cart'
     cart = request.session.get('shopping_cart', {})
