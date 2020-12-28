@@ -14,7 +14,9 @@ from django.contrib.sites.models import Site
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.models import User
 
+
 # Create your views here.
+
 
 @login_required
 def checkout(request):
@@ -78,7 +80,7 @@ def checkout_success(request):
 
 
 def checkout_cancelled(request):
-    return HttpResponse('Checkout cancelled.')
+    return redirect(reverse("view_cart"))
 
 
 # From Stripe documentation
