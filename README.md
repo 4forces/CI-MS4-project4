@@ -61,7 +61,7 @@ As the shop owner:
 <summary>Wireframe</summary>
 
 <p align="center">
-    <img height="500" src="https://github.com/4forces/CI-MS4-project4/tree/master/static/images/readme/wireframep.png" alt="Wireframe">
+    <img height="500" src="https://github.com/4forces/CI-MS4-project4/tree/master/static/images/readme/wireframe.png" alt="Wireframe">
 </p>
 
 </details>
@@ -134,7 +134,7 @@ This was accomplished via 2 portions: adding a  `@user_passes_test(lambda u: u.i
 References to superuser only access was found on Stackoverflow [here](https://stackoverflow.com/questions/12003736/django-login-required-decorator-for-a-superuser) and [here](https://stackoverflow.com/questions/56897625/want-to-authenticate-only-superuser). Normal user - `@login required` was covered by the lecturer.
 
 
-#### Products List Page
+### Products List Page
 
 On this page, the user can see all the products sold. Each  product's image thumbnail, name, price and category are arranged into cards for the user to preview. The user may only add the product to cart upon login. The user can also click on the product thumbnail to view it in detail. The user may also search for specific products by using the search function, which allows search by key words and/or category.
 
@@ -147,7 +147,7 @@ At the initial stage, Bootstrap code from [this site](https://getbootstrap.com/d
 There was some issues with changing the background colour of the cards. A solution was found on [Stackoverflow](https://stackoverflow.com/questions/42430987/how-to-change-the-opacity-of-a-card-block-in-bootstrap-4). A way was also found to [fit the images nicely into the card](https://stackoverflow.com/questions/3029422/how-do-i-auto-resize-an-image-to-fit-a-div-container).
 
 
-#### View Product Page
+### View Product Page
 
 This pages shows further information on the product, such as quantity in stock, part number and description.
 
@@ -156,7 +156,7 @@ The user may search for the desired product via typing in the product name, and 
 The user may also add the product to the shopping cart from this page.
 
 
-#### Shopping Cart and checkout
+### Shopping Cart and checkout
 
 The shopping cart shows the list of products the user intends to purchase. The product name, unit price, quantity of purchase and costs sub-total  are shown. A thumbnail of the product is shown as well. 
 
@@ -184,7 +184,7 @@ The division by 100 was done in the `template.html` by [using mathfilters](https
 At the final step, after checkout and payment, Stripe Webhooks failed due to `HTTP status code 401 (Unauthorized)`. After looking at the [stripe documentation](https://stripe.com/docs/error-handling) and piecing the facts together, it was deduced this occured due to port 8080 being set as private in Gitpod. This issue was resolved after changing the setting to "Make Public".
 
 
-#### Add Product (Admin only)
+### Add Product (Admin only)
 
 An admin can access this page to add new products to the shop for sale. The following fields have to be populated: Name, Cost, Unit, Quantity, Category, Part Number, Description, Supplier and Cover (image upload). This function is accessed from the Navbar.
 
@@ -217,12 +217,12 @@ Much time was spent scrutinising and attempting to debug the frontend code as th
 Sometimes, the answer is just right under our nose. It is when one is able to not hold on too strongly to one's close-minded fixations, that there is space for the solution to surface in one's mind. This was a valuable lesson learnt not just in coding, but also to life. 
 
 
-#### Update Product (Admin only)
+### Update Product (Admin only)
 
 If the admin wishes to update the product details, he can do so. This function is accessed from the *Product List* page. 
 
 
-#### Delete Product (Admin only)
+### Delete Product (Admin only)
 
 The admin may also choose to remove the product if needed. This function is also accessed from the *Product List* page. 
 
@@ -272,7 +272,7 @@ Django messages was used in conjunction with [Toastr](https://github.com/CodeSev
 11. On the View Product page, updating of the product quantity before adding to the shopping cart. 
 
 11. In the shopping cart, display an input field for the user to directly input desired quantity. 
-    - User may wish to buy in large quantities, in which keying in is faster that clickin on the "+" icon multiple times. 
+    - User may wish to buy in large quantities, in which keying in is faster that clicking on the "+" icon multiple times. 
 
 12. Admin CRUD functions for product Supplier and Category
 
@@ -357,7 +357,7 @@ No. | Test Case | Expected Result(s) | Results
 
 ### Testing for Admin (Superuser)
 
-Only test steps unique to Superuser are listed here. The above tests for Shopper (User) should pass for the Superuser as well. 
+Most of the test steps listed here are unique to Superuser. The above tests for Shopper (User) should pass for the Superuser as well. 
 
 For Step 4 "Add Product", the following suggested values can be inputted/selected:
 
@@ -405,7 +405,7 @@ No. | Test Case | Expected Result(s) | Results
 1. Stripe purchase value must be a minimum $1.00. Stripe will decline the payment if this criteria is not met. 
 2. If a product is already in the cart, clicking on "Add to cart" again for the same product from the *Product List* page or the *View Product* page redirects the user to the cart. There is likely a way using if-else loops so that the user remains at the respective page. 
 3. For the *Update Product* form page, two issues were encountered:
-    - Since the image identifier is not called, the form assumes there is no image uploaded, and requires the Admin to do so, even if there was already an image that was uploaded during the "Add Product" step. Our tutor acknowledged that this is a known issue with Cloudinary
+    - Since the image identifier is not called, the form assumes there is no image uploaded, and requires the Admin to do so, even if there was already an image that was uploaded during the "Add Product" step. The Teaching Assistant acknowledged that this is a known issue with Cloudinary
     - The update step has to be done 2 times for the product to be successfully updated. On the first submission, the page refreshes itself with all the form fields retained except for the cover image. The Admin is required to repeat the image upload again before clicking on "Submit", only then the update form is successfully submitted and executed. 
 4. Hovering over the Navbar links causes the Navbar to "vibrate". This is due to the `border-bottom: 3px` CSS for the Navbar links. An alternative text-decoration that does not affect the Navbar size needs to be explored. 
 5. `backdrop-filter` is used for the Navbar and various elements in this project. This CSS property is [not fully supported by all browsers](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter). Firefox does not support this feature by default, some settings have to be chanded. The steps for doing so can be found [here](https://dev.to/codingsprint/how-to-enable-backdrop-filter-in-firefox-2n8e). 
@@ -472,7 +472,7 @@ heroku  https://git.heroku.com/<APP-NAME>.git (push)
 <summary>Heroku Config Variables Example</summary>
 
 <p align="center">
-    <img height="500" src="https://github.com/4forces/CI-MS4-project4/tree/master/static/images/readme/heroku-config-vars.png" alt="Wireframe">
+    <img height="500" src="https://github.com/4forces/CI-MS4-project4/tree/master/static/images/readme/heroku-config-vars.png" alt="Heroku Config Vars screenshot">
 </p>
 
 </details>
